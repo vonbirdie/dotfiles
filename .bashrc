@@ -56,17 +56,6 @@ PATH="$PATH:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin"
 test -d "$HOME/bin" &&
 PATH="$HOME/bin:$PATH"
 
-# bring in rvm
-test -d "/usr/local/rvm/bin" &&
-PATH="$PATH:/usr/local/rvm/bin"
-
-#bring in mysql
-test -d "/usr/local/mysql/bin" &&
-PATH="$PATH:/usr/local/mysql/bin/"
-
-# git-achievements
-PATH="$PATH:/Users/andreas/Documents/SoftwareDevelopment/git-achievements"
-
 # ----------------------------------------------------------------------
 # ENVIRONMENT CONFIGURATION
 # ----------------------------------------------------------------------
