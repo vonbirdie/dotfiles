@@ -64,6 +64,9 @@ PATH="$PATH:/usr/local/rvm/bin"
 test -d "/usr/local/mysql/bin" &&
 PATH="$PATH:/usr/local/mysql/bin/"
 
+# git-achievements
+PATH="$PATH:/Users/andreas/Documents/SoftwareDevelopment/git-achievements"
+
 # ----------------------------------------------------------------------
 # ENVIRONMENT CONFIGURATION
 # ----------------------------------------------------------------------
@@ -191,6 +194,7 @@ fi
 # ----------------------------------------------------------------------
 
 alias fn='find . -name'
+alias git="git-achievements"
 
 # ----------------------------------------------------------------------
 # BASH COMPLETION
