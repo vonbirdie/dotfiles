@@ -253,3 +253,12 @@ prompt_color
 
 # bring in rvm script
 test -x ~/.rvm/scripts/rvm && source ~/.rvm/scripts/rvm
+
+# -------------------------------------------------------------------
+# Cappuccino
+# -------------------------------------------------------------------
+PATH="$PATH:/usr/local/narwhal/bin"
+
+export NARWHAL_ENGINE=jsc
+
+export CAPP_BUILD="$HOME/Documents/SoftwareDevelopment/Build"
