@@ -1,7 +1,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " BASIC SETTINGS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set nocompatible                  " Must come first because it changes other options.
+set nocompatible                  " Use vim settings instead of vi settings
 set fileformat=unix
 
 set nobackup                      " Make a backup while saving the file
@@ -33,7 +33,8 @@ colorscheme vividchalk
 " FORMATTING
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax enable                     " Turn on syntax highlighting.
-filetype plugin indent on         " Turn on file type detection.
+filetype plugin on                " Turn on file type detection
+filetype indent on                " Turn on indentation
 
 set wrap                          " Turn on line wrapping.
 set scrolloff=4                   " Show 4 lines of context around the cursor.
@@ -41,8 +42,19 @@ set scrolloff=4                   " Show 4 lines of context around the cursor.
 set tabstop=4                     " Global tab width.
 set shiftwidth=4                  " And again, related.
 set expandtab                     " Use spaces instead of tabs
+set autoindent                    " Indent new lines
 
 set backspace=indent,eol,start    " Intuitive backspacing.
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" STATUS LINE
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set laststatus=2                  " Always show the status line
+
+set statusline=%f
+
+set statusline+=%y
+set statusline+=\ [%c,%l]
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " OTHER
