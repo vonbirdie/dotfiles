@@ -1,0 +1,28 @@
+[user]
+	name = Andreas Falk
+    email = $EMAIL
+
+[core]
+	autocrlf = false
+	pager = $PAGER
+    whitespace = trailing-space,space-before-tab
+
+[help]
+    browser = open
+
+[alias]
+    l       = log .
+    ci      = commit
+    s       = status -sb
+
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+
+[difftool "Kaleidoscope"]
+	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+[diff]
+	tool = Kaleidoscope
