@@ -29,7 +29,9 @@ set incsearch                     " Highlight matches as you type.
 set hlsearch                      " Highlight matches.
 
 " Colorscheme 
-colorscheme vividchalk
+colorscheme solarized
+set background=dark
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " FORMATTING
