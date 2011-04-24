@@ -1,6 +1,5 @@
 [user]
 	name = Andreas Falk
-    email = $EMAIL
 
 [core]
 	autocrlf = false

@@ -1,17 +1,18 @@
-#!/bin/bash
+#!/bin/sh
 
-files=( ".bash_profile"
-        ".bashrc"
-        ".inputrc"
-        ".screenrc" )
+function set_rc {
+    [ -z "$1" ] && return
+    echo "Setting ${1}..."
+    [ -f ~/.${1} ] && [ ! -f ~/.${1}.bak ] && mv -f ~/.${1} ~/.${1}.bak
+    ln -sf ~/dotfiles/${1} ~/.${1}
+}
 
-for file in $files
-do
-    echo "Installing $file"
+set_rc "inputrc"
+set_rc "screenrc"
+set_rc "vim"
+set_rc "vimrc"
+set_rc "gitconfig"
+set_rc "bash_profile"
+set_rc "bashrc"
 
-    if [ -f "~/$file" ]; then
-        rm -i "~/$file"
-    fi
-
-    ln $(echo $file | sed 's/\.\(.*\)/\1/') ~/$file
-done
+exit 0
