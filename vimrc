@@ -8,7 +8,7 @@ set fileformat=unix
 
 set nobackup                      " Make a backup while saving the file
 set writebackup                   " 
-set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
+set directory=/tmp/,~/.vim/tmp/,. " Keep swap files in one location
 
 set hidden                        " Handle multiple buffers better.
 
