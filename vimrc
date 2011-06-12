@@ -79,7 +79,7 @@ map <leader>tc :tabclose<cr>
 map <leader>tn :tabnext<cr>
 map <leader>tp :tabprevious<cr>
 
-map <leader>bn :bn<cr>
+map <leader>n :bn<cr>
 map <leader>bd :bd<cr>
 
 map <leader>f :LustyFilesystemExplorer<cr>
