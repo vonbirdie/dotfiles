@@ -14,5 +14,6 @@ set_rc "vimrc"
 set_rc "gitconfig"
 set_rc "bash_profile"
 set_rc "bashrc"
+set_rc "irbrc"
 
 exit 0
