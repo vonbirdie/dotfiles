@@ -5,6 +5,7 @@
 	autocrlf = false
 	pager = $PAGER
     whitespace = trailing-space,space-before-tab
+	excludesfile = ~/dotfiles/gitignore
 
 [help]
     browser = open
