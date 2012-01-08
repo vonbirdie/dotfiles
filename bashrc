@@ -50,7 +50,7 @@ umask 0022
 # ----------------------------------------------------------------------
 
 # we want the various sbins on the path along with /usr/local/bin
-PATH="$PATH:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin"
+PATH="/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:$PATH"
 
 # put ~/bin on PATH if it exists
 test -d "$HOME/bin" &&
