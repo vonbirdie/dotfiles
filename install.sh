@@ -15,5 +15,10 @@ set_rc "gitconfig"
 set_rc "bash_profile"
 set_rc "bashrc"
 set_rc "irbrc"
+set_rc "rdebugrc"
+set_rc "htoprc"
+
+echo "Setting bin..."
+ln -sf ~/dotfiles/bin ~/bin
 
 exit 0

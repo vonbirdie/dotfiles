@@ -72,16 +72,19 @@ case "$0" in
     *)  unset LOGIN ;;
 esac
 
-# enable en_US locale w/ utf-8 encodings if not already configured
-: ${LANG:="en_US.UTF-8"}
-: ${LANGUAGE:="en"}
-: ${LC_CTYPE:="en_US.UTF-8"}
-: ${LC_ALL:="en_US.UTF-8"}
+# enable sv_SE locale w/ utf-8 encodings if not already configured
+: ${LANG:="sv_SE.UTF-8"}
+: ${LANGUAGE:="sv"}
+: ${LC_CTYPE:="sv_SE.UTF-8"}
+: ${LC_ALL:="sv_SE.UTF-8"}
 export LANG LANGUAGE LC_CTYPE LC_ALL
 
 # always use PASSIVE mode ftp
 : ${FTP_PASSIVE:=1}
 export FTP_PASSIVE
+
+# Colon separated list of files to ignore on completion
+FIGNORE=".swp"
 
 # ----------------------------------------------------------------------
 # PAGER / EDITOR
@@ -155,23 +158,6 @@ prompt_color() {
 # ----------------------------------------------------------------------
 
 if [ "$UNAME" = Darwin ]; then
-    # put ports on the paths if /opt/local exists
-    test -x /opt/local && {
-        PORTS=/opt/local
-
-        # setup the PATH and MANPATH
-        PATH="$PORTS/bin:$PORTS/sbin:$PATH"
-        MANPATH="$PORTS/share/man:$MANPATH"
-
-        # nice little port alias
-        alias port="sudo nice -n +18 $PORTS/bin/port"
-    }
-
-    test -x /usr/pkg && {
-        PATH="/usr/pkg/sbin:/usr/pkg/bin:$PATH"
-        MANPATH="/usr/pkg/share/man:$MANPATH"
-    }
-
     # setup java environment. puke.
     JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home"
     ANT_HOME="/Developer/Java/Ant"
@@ -192,11 +178,11 @@ if test -z "$BASH_COMPLETION" ; then
     bash=${BASH_VERSION%.*}; bmajor=${bash%.*}; bminor=${bash#*.}
     if [ "$PS1" ] && [ $bmajor -gt 1 ] ; then
         # search for a bash_completion file to source
-        for f in /usr/pkg/etc/back_completion \
-            /usr/local/etc/bash_completion \
-            /opt/local/etc/bash_completion \
-            /etc/bash_completion \
-            ~/.bash_completion ;
+        for f in /usr/local/etc/bash_completion \
+                 /usr/pkg/etc/bash_completion \
+                 /opt/local/etc/bash_completion \
+                 /etc/bash_completion \
+                 ~/.bash_completion ;
         do
             test -f $f && {
                 . $f
@@ -251,14 +237,11 @@ test -r ~/.shenv &&
 test -n "$PS1" &&
 prompt_color
 
-# bring in rvm script
-test -x ~/.rvm/scripts/rvm && source ~/.rvm/scripts/rvm
-
 # -------------------------------------------------------------------
-# Cappuccino
+# MOTD / FORTUNE
 # -------------------------------------------------------------------
-PATH="$PATH:/usr/local/narwhal/bin"
 
-export NARWHAL_ENGINE=jsc
-
-export CAPP_BUILD="$HOME/Documents/SoftwareDevelopment/Build"
+test -n "$INTERACTIVE" -a -n "$LOGIN" && {
+    uname -npsr
+    uptime
+}

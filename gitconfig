@@ -1,28 +1,45 @@
 [user]
 	name = Andreas Falk
+    email = adde.falk@gmail.com
+
+[alias]
+    l       = log .
+    ll      = log --pretty=oneline --abbrev-commit --max-count=15
+    ci      = commit
+    s       = status -sb
 
 [core]
 	autocrlf = false
 	pager = $PAGER
+    editor = vim
     whitespace = trailing-space,space-before-tab
 	excludesfile = ~/dotfiles/gitignore
 
 [help]
     browser = open
 
-[alias]
-    l       = log .
-    ci      = commit
-    s       = status -sb
+[diff]
+    renames = copies
+
+[push]
+    default = current
 
 [color]
-	diff = auto
-	status = auto
-	branch = auto
+    ui = auto
 
-[difftool "Kaleidoscope"]
-	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
-[difftool]
-	prompt = false
-[diff]
-	tool = Kaleidoscope
+[color "diff"]
+    meta = blue bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+
+[color "branch"]
+    current = yellow reverse
+    local = yellow bold
+    remote = green bold
+    plain = red bold
+
+[color "status"]
+    added = yellow
+    changed = green bold
+    untracked = blue bold
