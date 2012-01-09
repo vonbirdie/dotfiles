@@ -16,3 +16,6 @@
 [submodule "vim/bundle/json"]
 	path = vim/bundle/json
 	url = git@github.com:luuse/vim-json.git
+[submodule "vim/bundle/javascript"]
+	path = vim/bundle/javascript
+	url = https://github.com/pangloss/vim-javascript.git
