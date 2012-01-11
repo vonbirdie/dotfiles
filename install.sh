@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 function set_rc {
     [ -z "$1" ] && return
