@@ -77,6 +77,16 @@ PATH="$HOME/bin:$PATH"
 
 export EDITOR=vim
 
+# PAGER
+if test -n "$(command -v less)" ; then
+    PAGER="less -FirSwX"
+    MANPAGER="less -FiRswX"
+else
+    PAGER=more
+    MANPAGER="$PAGER"
+fi
+export PAGER MANPAGER
+
 # ----------------------------------------------------------------------
 # PROMPT
 # ----------------------------------------------------------------------
