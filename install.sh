@@ -17,6 +17,7 @@ set_rc "bashrc"
 set_rc "irbrc"
 set_rc "rdebugrc"
 set_rc "htoprc"
+set_rc "gemrc"
 
 echo "Setting bin..."
 ln -sf ~/dotfiles/bin ~/bin
