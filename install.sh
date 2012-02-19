@@ -18,6 +18,7 @@ set_rc "rdebugrc"
 set_rc "htoprc"
 set_rc "gemrc"
 set_rc "tmux.conf"
+set_rc "zshrc"
 
 echo "Setting bin..."
 ln -sf ~/dotfiles/bin ~/bin
