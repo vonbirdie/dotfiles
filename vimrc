@@ -82,9 +82,6 @@ map <leader>tp :tabprevious<cr>
 map <leader>n :bn<cr>
 map <leader>bd :bd<cr>
 
-map <leader>f :LustyFilesystemExplorer<cr>
-map <leader>b :LustyBufferExplorer<cr>
-
 map <C-m> :w<CR>:make<CR>:cw<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
