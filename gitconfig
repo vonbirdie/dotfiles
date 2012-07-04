@@ -9,7 +9,7 @@
     s       = status -sb
 
 [core]
-	autocrlf = false
+	autocrlf = input
 	pager = $PAGER
     editor = vim
     whitespace = trailing-space,space-before-tab
