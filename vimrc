@@ -121,3 +121,4 @@ set wildignore+=*/vendor/ruby/*,*/vendor/cache/*
 " LANGUAGE SPECIFICS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 expandtab
+autocmd FileType coffee setlocal tabstop=2 shiftwidth=2 expandtab
