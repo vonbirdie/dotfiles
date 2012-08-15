@@ -13,6 +13,9 @@
 #fpath=(~/.zsh/functions $fpath)
 #autoload -U ~/.zsh/functions/*(:t)
 
+autoload -U compinit
+compinit
+
 REPORTTIME=10 # print elapsed time when more than 10 seconds
 
 HISTFILE=~/.zsh_history
