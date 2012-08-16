@@ -1,7 +1,3 @@
-[user]
-	name = Andreas Falk
-    email = adde.falk@gmail.com
-
 [alias]
     l       = log .
     ll      = log --pretty=oneline --abbrev-commit --max-count=15
