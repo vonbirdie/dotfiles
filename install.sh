@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 function set_rc {
     [ -z "$1" ] && return
@@ -8,7 +8,6 @@ function set_rc {
 }
 
 set_rc "inputrc"
-set_rc "screenrc"
 set_rc "vim"
 set_rc "vimrc"
 set_rc "gitconfig"
@@ -17,6 +16,9 @@ set_rc "bashrc"
 set_rc "irbrc"
 set_rc "rdebugrc"
 set_rc "htoprc"
+set_rc "gemrc"
+set_rc "tmux.conf"
+set_rc "zshrc"
 
 echo "Setting bin..."
 ln -sf ~/dotfiles/bin ~/bin
