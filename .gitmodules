@@ -19,3 +19,6 @@
 [submodule "vim/bundle/javascript"]
 	path = vim/bundle/javascript
 	url = https://github.com/pangloss/vim-javascript.git
+[submodule "vim/bundle/pasta"]
+	path = vim/bundle/pasta
+	url = git://github.com/sickill/vim-pasta.git
