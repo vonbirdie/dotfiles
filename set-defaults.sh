@@ -22,7 +22,7 @@ defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
 # Increase window resize speed for Cocoa applications
 defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
 
-# Disable the 'Are you sure you want to open this application?â' dialog
+# Disable the 'Are you sure you want to open this application?ï¿½' dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 # Disable window animations
@@ -49,9 +49,6 @@ sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo Hos
 
 # Always open everything in Finder's list view. This is important.
 defaults write com.apple.Finder FXPreferredViewStyle Nlsv
-
-# Show the ~/Library folder
-chflags nohidden ~/Library
 
 # Show all filename extensions in Finder
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
