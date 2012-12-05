@@ -158,12 +158,6 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 # iTunes, Mail                                                                 #
 ################################################################################
 
-# Disable the Ping sidebar in iTunes
-defaults write com.apple.iTunes disablePingSidebar -bool true
-
-# Disable all the other Ping stuff in iTunes
-defaults write com.apple.iTunes disablePing -bool true
-
 # Disable the iTunes arrow links completely
 defaults write com.apple.iTunes show-store-arrow-links -bool false
 
