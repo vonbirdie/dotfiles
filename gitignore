@@ -36,3 +36,5 @@ Session.vim
 *.xpi
 *.deb
 *.rpm
+
+.bundle

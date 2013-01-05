@@ -3,6 +3,7 @@
     ll      = log --pretty=oneline --abbrev-commit --max-count=15
     ci      = commit
     s       = status -sb
+    co      = checkout
 
 [core]
 	autocrlf = input
