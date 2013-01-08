@@ -52,6 +52,8 @@ set autoindent                    " Indent new lines
 
 set backspace=indent,eol,start    " Intuitive backspacing.
 
+set pastetoggle=<F2>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " STATUS LINE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
