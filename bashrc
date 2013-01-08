@@ -168,7 +168,7 @@ fi
 # CYGWIN SPECIFIC
 # ----------------------------------------------------------------------
 
-if [ "$(uname -o)" = Cygwin ]; then
+if [ "$(uname)" = CYGWIN* ]; then
     alias open='cygstart'
 fi
 
