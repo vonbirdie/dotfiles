@@ -73,6 +73,9 @@ PATH="/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:$PATH"
 test -d "$HOME/bin" &&
 PATH="$HOME/bin:$PATH"
 
+# add easy access to binstubs
+PATH="./bin:$PATH"
+
 
 # ----------------------------------------------------------------------
 # EDITOR

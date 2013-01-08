@@ -22,7 +22,7 @@ defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
 # Increase window resize speed for Cocoa applications
 defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
 
-# Disable the 'Are you sure you want to open this application?â' dialog
+# Disable the 'Are you sure you want to open this application?ï¿½' dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 # Disable window animations
@@ -50,9 +50,6 @@ sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo Hos
 # Always open everything in Finder's list view. This is important.
 defaults write com.apple.Finder FXPreferredViewStyle Nlsv
 
-# Show the ~/Library folder
-chflags nohidden ~/Library
-
 # Show all filename extensions in Finder
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
@@ -78,7 +75,7 @@ defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
 # Empty Trash securely by default
-defaults write com.apple.finder EmptyTrashSecurely -bool true
+defaults write com.apple.finder EmptyTrashSecurely -bool false
 
 # Enable AirDrop over Ethernet and on unsupported Macs running Lion
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
@@ -160,12 +157,6 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 ################################################################################
 # iTunes, Mail                                                                 #
 ################################################################################
-
-# Disable the Ping sidebar in iTunes
-defaults write com.apple.iTunes disablePingSidebar -bool true
-
-# Disable all the other Ping stuff in iTunes
-defaults write com.apple.iTunes disablePing -bool true
 
 # Disable the iTunes arrow links completely
 defaults write com.apple.iTunes show-store-arrow-links -bool false
