@@ -28,6 +28,28 @@ call vundle#rc()
 " let Vundle manage Vundle
 Bundle 'gmarik/vundle'
 
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'msanders/snipmate.vim'
+Bundle 'tpope/vim-rails'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'leshill/vim-json'
+Bundle 'pangloss/vim-javascript'
+Bundle 'sickill/vim-pasta'
+Bundle 'tpope/vim-git'
+Bundle 'tpope/vim-endwise'
+Bundle 'mmalecki/vim-node.js'
+Bundle 'ajf/puppet-vim'
+Bundle 'godlygeek/tabular'
+Bundle 'groenewege/vim-less'
+Bundle 'digitaltoad/vim-jade'
+Bundle 'tpope/vim-cucumber'
+Bundle 'kien/ctrlp.vim'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'nono/vim-handlebars'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'mileszs/ack.vim'
+Bundle 'vim-scripts/groovy.vim'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " DISPLAY
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
