@@ -130,7 +130,7 @@ fi
 # CYGWIN SPECIFIC
 # ----------------------------------------------------------------------
 
-if [ "$(uname -o)" = Cygwin ]; then
+if [[ "$(uname)" == "CYGWIN"* ]]; then
     alias open='cygstart'
 fi
 
@@ -141,6 +141,8 @@ fi
 alias ..='cd ..'
 alias p='pwd'
 alias history='fc -l 1'
+
+alias binit="bundle install --path vendor --binstubs"
 
 # ----------------------------------------------------------------------
 # ZSH COMPLETION
