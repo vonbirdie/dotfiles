@@ -49,6 +49,7 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'mileszs/ack.vim'
 Bundle 'vim-scripts/groovy.vim'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'Raimondi/delimitMate'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " DISPLAY
