@@ -4,7 +4,10 @@ PATH="/usr/local/sbin:$PATH"
 # put ~/bin on PATH if it exists
 test -d "$HOME/bin" && PATH="$HOME/bin:$PATH"
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+if [ -d "$HOME/.rbenv" ]; then
+    export PATH="$HOME/.rbenv/bin:$PATH"
+    export PATH="$HOME/.rbenv/shims:$PATH"
+    eval "$(rbenv init -)"
+fi
 
 export PATH
