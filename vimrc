@@ -29,7 +29,6 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'msanders/snipmate.vim'
 Bundle 'tpope/vim-rails'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'leshill/vim-json'
@@ -50,6 +49,7 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'mileszs/ack.vim'
 Bundle 'vim-scripts/groovy.vim'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'Raimondi/delimitMate'
 Bundle 'terryma/vim-multiple-cursors'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
