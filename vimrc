@@ -36,11 +36,8 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'sickill/vim-pasta'
 Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-endwise'
-Bundle 'mmalecki/vim-node.js'
-Bundle 'ajf/puppet-vim'
 Bundle 'godlygeek/tabular'
 Bundle 'groenewege/vim-less'
-Bundle 'digitaltoad/vim-jade'
 Bundle 'tpope/vim-cucumber'
 Bundle 'kien/ctrlp.vim'
 Bundle 'kchmck/vim-coffee-script'
@@ -51,6 +48,7 @@ Bundle 'vim-scripts/groovy.vim'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'Raimondi/delimitMate'
 Bundle 'terryma/vim-multiple-cursors'
+Bundle 'SirVer/ultisnips'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " DISPLAY
@@ -147,6 +145,11 @@ inoremap <left> <nop>
 inoremap <right> <nop>
 nnoremap j gj
 nnoremap k gk
+
+" Remap ultisnips to work with ycm
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Specifics
