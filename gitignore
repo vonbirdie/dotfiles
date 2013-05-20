@@ -38,3 +38,9 @@ Session.vim
 *.rpm
 
 .bundle
+
+# IntelliJ
+*.iml
+*.ipr
+*.iws
+.idea/
