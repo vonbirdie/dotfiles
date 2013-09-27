@@ -41,3 +41,9 @@
     added = yellow
     changed = green bold
     untracked = blue bold
+
+[url "https://"]
+	insteadOf = git://
+
+[include]
+    path = .gitconfig.local
