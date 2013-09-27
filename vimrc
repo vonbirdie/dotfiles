@@ -49,6 +49,7 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'Raimondi/delimitMate'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'SirVer/ultisnips'
+Bundle 'digitaltoad/vim-jade'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " DISPLAY
@@ -77,8 +78,8 @@ filetype indent on                " Turn on indentation
 set wrap                          " Turn on line wrapping.
 set scrolloff=4                   " Show 4 lines of context around the cursor.
 
-set tabstop=4                     " Global tab width.
-set shiftwidth=4                  " And again, related.
+set tabstop=2                     " Global tab width.
+set shiftwidth=2                  " And again, related.
 set expandtab                     " Use spaces instead of tabs
 set autoindent                    " Indent new lines
 
@@ -160,4 +161,3 @@ set wildignore+=*/vendor/ruby/*,*/vendor/cache/*
 " LANGUAGE SPECIFICS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 expandtab
-autocmd FileType coffee setlocal tabstop=2 shiftwidth=2 expandtab
