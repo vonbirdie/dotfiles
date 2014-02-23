@@ -44,3 +44,10 @@ Session.vim
 *.ipr
 *.iws
 .idea/
+
+# Eclipse
+.project
+.classpath
+
+# Gradle
+.gradle
