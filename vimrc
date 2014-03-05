@@ -47,6 +47,10 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'SirVer/ultisnips'
 Bundle 'digitaltoad/vim-jade'
+Bundle 'scrooloose/syntastic'
+Bundle 'tpope/vim-vinegar'
+Bundle 'MarcWeber/vim-addon-local-vimrc'
+Bundle 'rking/ag.vim'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " DISPLAY
