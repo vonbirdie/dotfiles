@@ -1,20 +1,31 @@
-# OS X files
+# OS X
 .DS_Store
-.Trashes
+.AppleDouble
+.LSOverride
 .Spotlight-V100
-
-# OS X Thumbnails
+.Trashes
 ._*
 
-# Files that might appear on external disk
-.Spotlight-V100
-.Trashes
-
 # Vim files
-.*.sw[a-z]
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
 *.un~
 Session.vim
 .netrwhist
+*~
+
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm
+
+## Directory-based project format
+.idea/
+
+## File-based project format
+*.ipr
+*.iws
+*.iml
+
+## Additional for IntelliJ
+out/
 
 # It's better to unpack these files and commit the raw source because
 # git has its own built in compression methods.
@@ -24,8 +35,10 @@ Session.vim
 *.zip
 *.gz
 *.bzip
+*.bz2
 *.xz
 *.lzma
+*.cab
 
 #packing-only formats
 *.iso
@@ -34,20 +47,11 @@ Session.vim
 #package management formats
 *.dmg
 *.xpi
+*.gem
+*.egg
 *.deb
 *.rpm
+*.msi
+*.msm
+*.msp
 
-.bundle
-
-# IntelliJ
-*.iml
-*.ipr
-*.iws
-.idea/
-
-# Eclipse
-.project
-.classpath
-
-# Gradle
-.gradle
