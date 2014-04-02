@@ -9,7 +9,7 @@ set encoding=utf-8
 
 set nobackup                      " Make a backup while saving the file
 set writebackup                   " 
-set directory=/tmp/,~/.vim/tmp/,. " Keep swap files in one location
+set directory=/tmp//,~/tmp//,.    " Keep swap files in one location
 
 set hidden                        " Handle multiple buffers better.
 
