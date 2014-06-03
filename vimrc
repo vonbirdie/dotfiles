@@ -22,35 +22,41 @@ runtime macros/matchit.vim        " Load the matchit plugin.
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'tpope/vim-rails'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'leshill/vim-json'
-Bundle 'pangloss/vim-javascript'
-Bundle 'sickill/vim-pasta'
-Bundle 'tpope/vim-git'
-Bundle 'tpope/vim-endwise'
-Bundle 'godlygeek/tabular'
-Bundle 'groenewege/vim-less'
-Bundle 'tpope/vim-cucumber'
-Bundle 'kien/ctrlp.vim'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'Raimondi/delimitMate'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'SirVer/ultisnips'
-Bundle 'digitaltoad/vim-jade'
-Bundle 'scrooloose/syntastic'
-Bundle 'tpope/vim-vinegar'
-Bundle 'MarcWeber/vim-addon-local-vimrc'
-Bundle 'rking/ag.vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'tpope/vim-rails'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'leshill/vim-json'
+Plugin 'pangloss/vim-javascript'
+Plugin 'sickill/vim-pasta'
+Plugin 'tpope/vim-git'
+Plugin 'tpope/vim-endwise'
+Plugin 'godlygeek/tabular'
+Plugin 'groenewege/vim-less'
+Plugin 'tpope/vim-cucumber'
+Plugin 'kien/ctrlp.vim'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'Raimondi/delimitMate'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'digitaltoad/vim-jade'
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-vinegar'
+"Plugin 'MarcWeber/vim-addon-local-vimrc'
+Plugin 'rking/ag.vim'
+Plugin 'othree/html5.vim'
+Plugin 'JuliaLang/julia-vim'
+
+call vundle#end()
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " DISPLAY
