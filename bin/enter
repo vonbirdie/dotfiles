@@ -1,0 +1,21 @@
+#!/usr/bin/env python2
+# Usage: enter <container_id>
+# Enter the namespace of a container with bash
+
+import sys
+import subprocess
+import json
+
+if len(sys.argv) < 2:
+    print("You need to provide a docker container id")
+    sys.exit(1)
+
+container_info_str=subprocess.check_output(["docker", "inspect", sys.argv[1]])
+container_info=json.loads(container_info_str)
+
+container_pid=container_info[0]["State"]["Pid"]
+container_env=container_info[0]["Config"]["Env"]
+container_env=dict(var.split("=") for var in container_env)
+
+subprocess.call(['nsenter', '--mount', '--uts', '--ipc', '--net', '--pid', '--target', str(container_pid), '/bin/bash'], env=container_env)
+
