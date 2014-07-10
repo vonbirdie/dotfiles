@@ -137,6 +137,8 @@ map <leader>bd :bd<cr>
 
 map <C-m> :w<CR>:make<CR>:cw<CR>
 
+map <C-c> "+y<CR>
+
 nnoremap <leader><space> :noh<cr>
 nnoremap <tab> %
 vnoremap <tab> %
