@@ -168,3 +168,5 @@ test -r ~/.shenv &&
 
 # Use the color prompt by default when interactive
 prompt_color
+
+bindkey '^R' history-incremental-search-backward
