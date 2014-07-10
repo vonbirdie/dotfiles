@@ -168,3 +168,12 @@ set wildignore+=*/vendor/ruby/*,*/vendor/cache/*
 " LANGUAGE SPECIFICS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 expandtab
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Go
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+filetype off
+filetype plugin indent off
+set runtimepath+=/usr/share/go/misc/vim
+filetype plugin indent on
+syntax on
