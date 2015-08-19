@@ -51,7 +51,8 @@ Plugin 'tpope/vim-vinegar'
 Plugin 'MarcWeber/vim-addon-local-vimrc'
 Plugin 'rking/ag.vim'
 Plugin 'othree/html5.vim'
-Plugin 'airblade/vim-gitgutter'
+Plugin 'dag/vim-fish'
+Plugin 'fatih/vim-go'
 
 call vundle#end()
 
