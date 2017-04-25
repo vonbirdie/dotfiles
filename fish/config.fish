@@ -30,3 +30,6 @@ if test -r ~/.shenv.fish
   source ~/.shenv.fish
 end
 
+# A feeble attempt at merging history.
+# https://github.com/fish-shell/fish-shell/issues/825
+bind -k up 'history --merge ; up-or-search'
