@@ -14,13 +14,13 @@ function fish_prompt
   echo -n "@"
 
   set_color yellow
-  echo -n (hostname)
+  echo -n (hostname -s)
 
   set_color white
   echo -n ":"
 
   set_color blue
-  echo -n (pwd)
+  echo -n (dirs)
 
   set_color white
   echo -n "]"
