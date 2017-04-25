@@ -178,3 +178,10 @@ filetype plugin indent off
 set runtimepath+=/usr/share/go/misc/vim
 filetype plugin indent on
 syntax on
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Machine local
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if filereadable(".vimrc.local")
+  source .vimrc.local
+endif
