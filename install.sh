@@ -20,4 +20,7 @@ set_rc "zshrc"
 echo "Setting bin..."
 ln -sf ~/dotfiles/bin ~/bin
 
+echo "Setting bin..."
+ln -sf ~/dotfiles/fish ~/.config/fish
+
 exit 0
