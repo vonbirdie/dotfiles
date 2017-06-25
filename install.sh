@@ -13,7 +13,6 @@ set_rc "vimrc"
 set_rc "gitconfig"
 set_rc "bash_profile"
 set_rc "bashrc"
-set_rc "htoprc"
 set_rc "tmux.conf"
 set_rc "zshrc"
 
