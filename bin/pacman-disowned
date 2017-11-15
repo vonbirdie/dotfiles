@@ -1,0 +1,13 @@
+#!/bin/sh
+
+tmp="$(mktemp --directory --tmpdir pacman-disowned-XXXXX)"
+db="${tmp}/db"
+fs="${tmp}/fs"
+
+trap 'rm -rf "$tmp"' EXIT
+
+pacman -Qlq | sort -u > "$db"
+
+find /etc /opt /usr ! -name lost+found \( -type d -printf '%p/\n' -o -print \) | sort > "$fs"
+
+comm -23 "$fs" "$db"
