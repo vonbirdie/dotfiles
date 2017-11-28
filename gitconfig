@@ -9,7 +9,7 @@
 [core]
 	autocrlf = input
 	pager = $PAGER
-    editor = vim
+    editor = nvim
     whitespace = trailing-space,space-before-tab
 	excludesfile = ~/dotfiles/gitignore
 
