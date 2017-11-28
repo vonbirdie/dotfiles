@@ -147,7 +147,7 @@ alias binit="bundle install --path vendor --binstubs"
 # ----------------------------------------------------------------------
 
 # we always pass these to ls(1)
-LS_COMMON="lhBG"
+LS_COMMON="lhB"
 
 # setup the main ls alias if we've established common args
 test -n "$LS_COMMON" &&
