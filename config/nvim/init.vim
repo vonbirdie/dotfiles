@@ -14,11 +14,15 @@ set undofile                      " Persistent undo <3
 " Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" TODO: fzf seems to not be automatically loaded. Possibly because this is the vim
+" (not nvim) directory?
+source /usr/share/vim/vimfiles/plugin/fzf.vim
+
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'altercation/vim-colors-solarized'
 Plug 'mileszs/ack.vim'
-"https://github.com/junegunn/fzf
+Plug 'junegunn/fzf.vim'
 
 " Languages
 " https://github.com/sheerun/vim-polyglot
