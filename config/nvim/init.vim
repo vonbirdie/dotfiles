@@ -2,20 +2,13 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " BASIC SETTINGS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set nocompatible                  " Use vim settings instead of vi settings
-set modelines=0
 set fileformat=unix               " Only use LF
-set encoding=utf-8
 
-set nobackup                      " Make a backup while saving the file
-set writebackup                   " 
 set directory=/tmp//,~/tmp//,.    " Keep swap files in one location
 
 set hidden                        " Handle multiple buffers better.
 
 set undofile                      " Persistent undo <3
-
-runtime macros/matchit.vim        " Load the matchit plugin.
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vundle
@@ -57,10 +50,6 @@ call vundle#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " DISPLAY
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set showcmd                       " Display incomplete commands.
-set showmode                      " Display the mode you're in.
-
-set title                         " Set the terminal's title
 
 set number                        " Show line numbers.
 set relativenumber                " Show line numbers relative to current line.
@@ -79,7 +68,7 @@ filetype plugin on                " Turn on file type detection
 filetype indent on                " Turn on indentation
 
 set wrap                          " Turn on line wrapping.
-set scrolloff=4                   " Show 4 lines of context around the cursor.
+set scrolloff=6                   " Show 4 lines of context around the cursor.
 
 set tabstop=2                     " Global tab width.
 set shiftwidth=2                  " And again, related.
@@ -145,10 +134,6 @@ nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
 nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
 nnoremap j gj
 nnoremap k gk
 
@@ -157,21 +142,3 @@ let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Specifics
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set wildignore+=*/vendor/ruby/*,*/vendor/cache/*
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" LANGUAGE SPECIFICS
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 expandtab
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Go
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-filetype off
-filetype plugin indent off
-set runtimepath+=/usr/share/go/misc/vim
-filetype plugin indent on
-syntax on
