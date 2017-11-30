@@ -5,10 +5,23 @@
 : ${LOGNAME=$(id -un)}
 : ${UNAME=$(uname)}
 
+# readline inputrc
+: ${INPUTRC=~/.inputrc}
+
+# enable sv_SE locale w/ utf-8 encodings if not already configured
+: ${LANG:="en_US.UTF-8"}
+: ${LANGUAGE:="en"}
+: ${LC_CTYPE:="en_US.UTF-8"}
+: ${LC_ALL:="en_US.UTF-8"}
+export LANG LANGUAGE LC_CTYPE LC_ALL
 
 # ----------------------------------------------------------------------
 #  SHELL OPTIONS
 # ----------------------------------------------------------------------
+
+# bring in system zsh environment
+test -r /etc/zsh/zprofile &&
+      . /etc/zsh/zprofile
 
 #fpath=(~/.zsh/functions $fpath)
 #autoload -U ~/.zsh/functions/*(:t)
@@ -28,8 +41,8 @@ setopt EXTENDED_HISTORY
 setopt HIST_REDUCE_BLANKS
 setopt HIST_VERIFY
 setopt HIST_IGNORE_ALL_DUPS
-setopt HIST_NO_STORE # don't store the history command
-setopt SHARE_HISTORY # share history between terminal sessions
+setopt HIST_NO_STORE
+setopt SHARE_HISTORY
 
 # scripts and functions
 setopt LOCAL_OPTIONS
@@ -51,40 +64,30 @@ setopt PROMPT_SUBST
 setopt CORRECT
 setopt IGNORE_EOF
 
+# disable core dumps
+ulimit -S -c 0
+
 # default umask
 umask 0022
-
-bindkey '^[^[[D' backward-word
-bindkey '^[^[[C' forward-word
-bindkey '^A' beginning-of-line
-bindkey '^E' end-of-line
-bindkey '^[[3~' delete-char
-bindkey '^?' backward-delete-char
 
 
 # ----------------------------------------------------------------------
 # PATH
 # ----------------------------------------------------------------------
 
-# source all paths
-. ~/dotfiles/paths
+# put ~/bin on PATH if it exists
+test -d "$HOME/bin" && PATH="$HOME/bin:$PATH"
+export PATH
 
 
 # ----------------------------------------------------------------------
 # EDITOR
 # ----------------------------------------------------------------------
 
-export EDITOR=vim
+export EDITOR=nvim
+export PAGER="less -FirSwX"
+export MANPAGER="less -FiRswX"
 
-# PAGER
-if test -n "$(command -v less)" ; then
-    PAGER="less -FirSwX"
-    MANPAGER="less -FiRswX"
-else
-    PAGER=more
-    MANPAGER="$PAGER"
-fi
-export PAGER MANPAGER
 
 # ----------------------------------------------------------------------
 # PROMPT
@@ -109,25 +112,6 @@ prompt_color() {
 
 
 # ----------------------------------------------------------------------
-# MACOS X / DARWIN SPECIFIC
-# ----------------------------------------------------------------------
-
-if [ "$UNAME" = Darwin ]; then
-    # setup java environment. puke.
-    JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home"
-    ANT_HOME="/Developer/Java/Ant"
-    export ANT_HOME JAVA_HOME
-fi
-
-# ----------------------------------------------------------------------
-# CYGWIN SPECIFIC
-# ----------------------------------------------------------------------
-
-if [[ "$(uname)" == "CYGWIN"* ]]; then
-    alias open='cygstart'
-fi
-
-# ----------------------------------------------------------------------
 # ALIASES / FUNCTIONS
 # ----------------------------------------------------------------------
 
@@ -135,11 +119,24 @@ alias ..='cd ..'
 alias p='pwd'
 alias history='fc -l 1'
 
-alias binit="bundle install --path vendor --binstubs"
 
 # ----------------------------------------------------------------------
 # ZSH COMPLETION
 # ----------------------------------------------------------------------
+
+
+# ----------------------------------------------------------------------
+# KEY BINDINGS
+# ----------------------------------------------------------------------
+
+bindkey '^[^[[D' backward-word
+bindkey '^[^[[C' forward-word
+bindkey '^A' beginning-of-line
+bindkey '^E' end-of-line
+bindkey '^[[3~' delete-char
+bindkey '^?' backward-delete-char
+
+bindkey '^R' history-incremental-search-backward
 
 
 # ----------------------------------------------------------------------
@@ -149,8 +146,6 @@ alias binit="bundle install --path vendor --binstubs"
 # we always pass these to ls(1)
 LS_COMMON="lhB"
 
-# setup the main ls alias if we've established common args
-test -n "$LS_COMMON" &&
 alias ls="command ls -$LS_COMMON"
 
 # these use the ls aliases above
@@ -158,15 +153,17 @@ alias ll="ls -A$LS_COMMON"
 alias l="ls -$LS_COMMON"
 alias l.="ls -d .*"
 
+
 # -------------------------------------------------------------------
 # USER SHELL ENVIRONMENT
 # -------------------------------------------------------------------
 
 # source ~/.shenv now if it exists
 test -r ~/.shenv &&
-. ~/.shenv
+      . ~/.shenv
 
-# Use the color prompt by default when interactive
-prompt_color
+if [[ -o interactive ]]; then
+  # Use the color prompt by default when interactive
+  prompt_color
+fi
 
-bindkey '^R' history-incremental-search-backward
