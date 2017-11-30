@@ -11,35 +11,34 @@ set hidden                        " Handle multiple buffers better.
 set undofile                      " Persistent undo <3
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Vundle
+" Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 call plug#begin('~/.config/nvim/plugged')
 
-#filetype off
-
 Plug 'altercation/vim-colors-solarized'
-Plug 'leshill/vim-json'
-Plug 'pangloss/vim-javascript'
-Plug 'sickill/vim-pasta'
+Plug 'mileszs/ack.vim'
+"https://github.com/junegunn/fzf
+
+" Languages
+" https://github.com/sheerun/vim-polyglot
+Plug 'dag/vim-fish'
 Plug 'tpope/vim-git'
-Plug 'tpope/vim-endwise'
-Plug 'godlygeek/tabular'
-Plug 'groenewege/vim-less'
-Plug 'kien/ctrlp.vim'
-Plug 'scrooloose/nerdcommenter'
-Plug 'Valloric/YouCompleteMe'
+Plug 'chr4/nginx.vim'
+Plug 'uarun/vim-protobuf'
+Plug 'rust-lang/rust.vim'
+Plug 'kurayama/systemd-vim-syntax'
+
+" Linting and make
+Plug 'neomake/neomake'
+
+" Snippets and auto completion
 Plug 'Raimondi/delimitMate'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'scrooloose/syntastic'
-Plug 'tpope/vim-vinegar'
-Plug 'MarcWeber/vim-addon-local-vimrc'
-Plug 'rking/ag.vim'
-Plug 'othree/html5.vim'
-Plug 'dag/vim-fish'
-Plug 'fatih/vim-go'
+"Plug 'Shougo/deoplete.nvim'
+
+"https://github.com/neovim/neovim/issues/3845#issuecomment-164647435
 
 " Initialize plugin system
 call plug#end()
@@ -52,6 +51,7 @@ call plug#end()
 set number                        " Show line numbers.
 set relativenumber                " Show line numbers relative to current line.
 set ruler                         " Show cursor position.
+set scrolloff=6                   " Show 4 lines of context around the cursor.
 
 " Colorscheme 
 colorscheme solarized
@@ -61,9 +61,6 @@ set background=dark
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " FORMATTING
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-set wrap                          " Turn on line wrapping.
-set scrolloff=6                   " Show 4 lines of context around the cursor.
 
 set tabstop=2                     " Global tab width.
 set shiftwidth=2                  " And again, related.
