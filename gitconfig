@@ -7,17 +7,20 @@
     co      = checkout
 
 [core]
-	autocrlf = input
-	pager = $PAGER
+    autocrlf = input
+    pager = $PAGER
     editor = nvim
     whitespace = trailing-space,space-before-tab
-	excludesfile = ~/dotfiles/gitignore
+    excludesfile = ~/dotfiles/gitignore
 
 [help]
     browser = open
 
 [diff]
     renames = copies
+
+[merge]
+    conflictstyle = diff3
 
 [push]
     default = simple
