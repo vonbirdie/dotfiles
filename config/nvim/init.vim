@@ -13,38 +13,36 @@ set undofile                      " Persistent undo <3
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vundle
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-filetype off
 
-set rtp+=~/.config/nvim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.config/nvim/plugged')
 
-" let Vundle manage Vundle
-Plugin 'gmarik/Vundle.vim'
+#filetype off
 
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'leshill/vim-json'
-Plugin 'pangloss/vim-javascript'
-Plugin 'sickill/vim-pasta'
-Plugin 'tpope/vim-git'
-Plugin 'tpope/vim-endwise'
-Plugin 'godlygeek/tabular'
-Plugin 'groenewege/vim-less'
-Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'Raimondi/delimitMate'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'scrooloose/syntastic'
-Plugin 'tpope/vim-vinegar'
-Plugin 'MarcWeber/vim-addon-local-vimrc'
-Plugin 'rking/ag.vim'
-Plugin 'othree/html5.vim'
-Plugin 'dag/vim-fish'
-Plugin 'fatih/vim-go'
+Plug 'altercation/vim-colors-solarized'
+Plug 'leshill/vim-json'
+Plug 'pangloss/vim-javascript'
+Plug 'sickill/vim-pasta'
+Plug 'tpope/vim-git'
+Plug 'tpope/vim-endwise'
+Plug 'godlygeek/tabular'
+Plug 'groenewege/vim-less'
+Plug 'kien/ctrlp.vim'
+Plug 'scrooloose/nerdcommenter'
+Plug 'Valloric/YouCompleteMe'
+Plug 'Raimondi/delimitMate'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-vinegar'
+Plug 'MarcWeber/vim-addon-local-vimrc'
+Plug 'rking/ag.vim'
+Plug 'othree/html5.vim'
+Plug 'dag/vim-fish'
+Plug 'fatih/vim-go'
 
-call vundle#end()
+" Initialize plugin system
+call plug#end()
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -63,9 +61,6 @@ set background=dark
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " FORMATTING
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-syntax enable                     " Turn on syntax highlighting.
-filetype plugin on                " Turn on file type detection
-filetype indent on                " Turn on indentation
 
 set wrap                          " Turn on line wrapping.
 set scrolloff=6                   " Show 4 lines of context around the cursor.
