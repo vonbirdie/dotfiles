@@ -16,7 +16,9 @@ set undofile                      " Persistent undo <3
 
 " TODO: fzf seems to not be automatically loaded. Possibly because this is the vim
 " (not nvim) directory?
-source /usr/share/vim/vimfiles/plugin/fzf.vim
+if filereadable("/usr/share/vim/vimfiles/plugin/fzf.vim")
+  source /usr/share/vim/vimfiles/plugin/fzf.vim
+endif
 
 call plug#begin('~/.config/nvim/plugged')
 
@@ -137,4 +139,11 @@ nnoremap k gk
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Machine local
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if filereadable("~/.vimrc.local")
+  source ~/.vimrc.local
+endif
 
