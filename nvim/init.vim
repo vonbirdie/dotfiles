@@ -23,7 +23,6 @@ endif
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'altercation/vim-colors-solarized'
-Plug 'mhinz/vim-grepper'
 Plug 'junegunn/fzf.vim'
 
 " Languages
@@ -136,10 +135,21 @@ nnoremap <right> <nop>
 nnoremap j gj
 nnoremap k gk
 
+nmap <c-p> :Files<cr>
+nmap <c-o> :Buffers<cr>
+nmap <c-i> :Ag<cr>
+" Insert mode completion
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+
 let g:deoplete#enable_at_startup = 1
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
+" When reading a buffer (after 1s), and when writing.
+call neomake#configure#automake('rw', 1000)
+let g:neomake_open_list = 2
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
