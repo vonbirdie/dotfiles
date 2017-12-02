@@ -23,7 +23,7 @@ endif
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'altercation/vim-colors-solarized'
-Plug 'mileszs/ack.vim'
+Plug 'mhinz/vim-grepper'
 Plug 'junegunn/fzf.vim'
 
 " Languages
