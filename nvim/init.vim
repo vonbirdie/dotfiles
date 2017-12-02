@@ -42,7 +42,7 @@ Plug 'neomake/neomake'
 Plug 'Raimondi/delimitMate'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-"Plug 'Shougo/deoplete.nvim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 "https://github.com/neovim/neovim/issues/3845#issuecomment-164647435
 
@@ -54,10 +54,11 @@ call plug#end()
 " DISPLAY
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+set cursorline                    " Highlight the current line
 set number                        " Show line numbers.
 set relativenumber                " Show line numbers relative to current line.
 set ruler                         " Show cursor position.
-set scrolloff=6                   " Show 4 lines of context around the cursor.
+set scrolloff=10                  " Show N lines of context around the cursor.
 
 " Colorscheme 
 colorscheme solarized
@@ -135,10 +136,11 @@ nnoremap <right> <nop>
 nnoremap j gj
 nnoremap k gk
 
-" Remap ultisnips to work with ycm
-let g:UltiSnipsExpandTrigger="<c-j>"
+let g:deoplete#enable_at_startup = 1
+let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Machine local
