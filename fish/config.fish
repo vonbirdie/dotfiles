@@ -6,8 +6,8 @@
 set -gx EDITOR nvim
 
 # PAGER
-set -gx PAGER "less -FirSwX"
-set -gx MANPAGER "less -FiRswX"
+set -gx PAGER less -FirSwX
+set -gx MANPAGER less -FiRswX
 
 # ----------------------------------------------------------------------
 # LS
