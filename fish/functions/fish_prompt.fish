@@ -20,7 +20,7 @@ function fish_prompt
   echo -n ":"
 
   set_color blue
-  echo -n (dirs | head -n1)
+  echo -n (prompt_pwd)
 
   set_color white
   echo -n "]"
