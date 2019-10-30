@@ -155,7 +155,7 @@ let g:neomake_open_list = 2
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Machine local
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if filereadable("~/.vimrc.local")
-  source ~/.vimrc.local
+if filereadable("~/.nvimrc.local")
+  source ~/.nvimrc.local
 endif
 
