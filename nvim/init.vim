@@ -27,12 +27,12 @@ Plug 'junegunn/fzf.vim'
 
 " Languages
 " https://github.com/sheerun/vim-polyglot
-Plug 'dag/vim-fish'
+Plug 'blankname/vim-fish'
 Plug 'tpope/vim-git'
 Plug 'chr4/nginx.vim'
 Plug 'uarun/vim-protobuf'
 Plug 'rust-lang/rust.vim'
-Plug 'kurayama/systemd-vim-syntax'
+Plug 'wgwoods/vim-systemd-syntax'
 
 " Linting and make
 Plug 'neomake/neomake'
