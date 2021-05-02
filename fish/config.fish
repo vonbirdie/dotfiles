@@ -9,6 +9,9 @@ set -gx EDITOR nvim
 set -gx PAGER less -FirSwX
 set -gx MANPAGER less -FiRswX
 
+# DIFF
+set -gx DIFFPROG "nvim -d"
+
 # ----------------------------------------------------------------------
 # LS
 # ----------------------------------------------------------------------
