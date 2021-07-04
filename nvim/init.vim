@@ -59,7 +59,7 @@ set relativenumber                " Show line numbers relative to current line.
 set ruler                         " Show cursor position.
 set scrolloff=10                  " Show N lines of context around the cursor.
 
-" Colorscheme 
+" Colorscheme
 colorscheme solarized
 set background=dark
 
@@ -136,8 +136,12 @@ nnoremap j gj
 nnoremap k gk
 
 nmap <c-p> :Files<cr>
+nnoremap <Leader>p :Fi <c-r><c-w><CR>
+vnoremap <leader>p y:Fi <c-r>"<CR>
+command! -bang -nargs=* Fi call fzf#vim#files('.', {'options':'--query '.shellescape(<q-args>)})
 nmap <c-o> :Buffers<cr>
 nmap <c-i> :Ag<cr>
+nnoremap <leader>i :Ag <c-r><c-w><CR>
 " Insert mode completion
 imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-j> <plug>(fzf-complete-file-ag)
@@ -150,7 +154,6 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 " When reading a buffer (after 1s), and when writing.
 call neomake#configure#automake('rw', 1000)
 let g:neomake_open_list = 2
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Machine local
