@@ -28,10 +28,16 @@ return require('packer').startup(function(use)
   use 'hrsh7th/vim-vsnip'
   use 'hrsh7th/cmp-vsnip'
 
-  -- fzf: fuzzy file finder and default integration with neovim.
-  -- https://github.com/junegunn/fzf.vim
-  use 'junegunn/fzf'
-  use 'junegunn/fzf.vim'
+  -- telescope: fuzzy file finder and integration with neovim.
+  -- https://github.com/nvim-telescope/telescope.nvim
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = {
+      {'nvim-lua/plenary.nvim'},
+      {'kyazdani42/nvim-web-devicons', opt = true},
+      {'nvim-treesitter/nvim-treesitter', opt = true},
+    }
+  }
 
   -- formatter: Runs formatters mapped by language.
   -- https://github.com/mhartington/formatter.nvim
@@ -49,7 +55,16 @@ return require('packer').startup(function(use)
   use 'kosayoda/nvim-lightbulb'
   use 'rafamadriz/friendly-snippets'
   use 'theHamsta/nvim-dap-virtual-text'
-  use 'folke/which-key.nvim'
+
+  use {
+  'sudormrfbin/cheatsheet.nvim',
+
+  requires = {
+    {'nvim-telescope/telescope.nvim'},
+    {'nvim-lua/popup.nvim'},
+    {'nvim-lua/plenary.nvim'},
+  }
+}
 
   -- indent-blankline: displays indent guides using invisible characters.
   -- https://github.com/lukas-reineke/indent-blankline.nvim
