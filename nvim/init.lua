@@ -92,4 +92,4 @@ map("n", "k", "gk")
 --
 -- Machine local
 --
-
+require("init_local")
