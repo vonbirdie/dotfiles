@@ -7,7 +7,6 @@ local cmp = require 'cmp'
 
 cmp.setup {
   sources = {
-    { name = 'buffer' },
     { name = 'calc' },
     { name = 'nvim_lsp' },
     { name = 'nvim_lua' },
@@ -26,7 +25,6 @@ cmp.setup {
   formatting = {
     format = function(entry, vim_item)
       vim_item.menu = ({
-        buffer = "[Buffer]",
         calc = "[Calc]",
         nvim_lsp = "[LSP]",
         nvim_lua = "[NeovimLua]",
