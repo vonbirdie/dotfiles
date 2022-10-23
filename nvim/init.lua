@@ -19,9 +19,7 @@ require('plugins')
 -- DISPLAY
 --
 vim.opt.cursorline = true                         -- Highlight the current line
-vim.opt.number = true                             -- Show line numbers.
 vim.opt.relativenumber = true                     -- Show line numbers relative to current line.
-vim.opt.ruler = true                              -- Show cursor position.
 vim.opt.scrolloff = 10                            -- Show N lines of context around the cursor.
 
 -- Colorscheme
@@ -34,7 +32,6 @@ vim.cmd[[colorscheme dracula]]
 vim.opt.tabstop = 2                               -- Global tab width.
 vim.opt.shiftwidth = 2                            -- And again, related.
 vim.opt.expandtab = true                          -- Use spaces instead of tabs
-vim.opt.autoindent = true                         -- Indent new lines
 
 vim.opt.backspace = {"indent", "eol", "start"}    -- Intuitive backspacing.
 
@@ -56,8 +53,6 @@ map("v", "/", "/\\v")
 
 vim.opt.ignorecase = true                         -- Case-insensitive searching.
 vim.opt.smartcase = true                          -- But case-sensitive if expression contains a capital letter.
-vim.opt.incsearch = true                          -- Highlight matches as you type.
-vim.opt.hlsearch = true                           -- Highlight matches.
 vim.opt.gdefault = true                           -- Use global by default in substitutions
 vim.opt.showmatch = true
 
