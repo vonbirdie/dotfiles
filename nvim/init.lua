@@ -23,6 +23,7 @@ vim.opt.relativenumber = true                     -- Show line numbers relative 
 vim.opt.scrolloff = 10                            -- Show N lines of context around the cursor.
 
 -- Colorscheme
+vim.opt.termguicolors = true
 vim.cmd[[colorscheme dracula]]
 
 
