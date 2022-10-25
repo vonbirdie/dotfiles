@@ -10,4 +10,5 @@ require('plugins.nvim-cmp')
 require('plugins.nvim-lightbulb')
 require('plugins.nvim-treesitter')
 require("plugins.telescope")
+require("plugins.todo-comments")
 

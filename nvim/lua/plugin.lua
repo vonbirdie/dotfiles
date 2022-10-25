@@ -57,14 +57,23 @@ return require('packer').startup(function(use)
   use 'theHamsta/nvim-dap-virtual-text'
 
   use {
-  'sudormrfbin/cheatsheet.nvim',
+    'sudormrfbin/cheatsheet.nvim',
 
-  requires = {
-    {'nvim-telescope/telescope.nvim'},
-    {'nvim-lua/popup.nvim'},
-    {'nvim-lua/plenary.nvim'},
+    requires = {
+      {'nvim-telescope/telescope.nvim'},
+      {'nvim-lua/popup.nvim'},
+      {'nvim-lua/plenary.nvim'},
+    }
   }
-}
+
+  -- https://github.com/folke/todo-comments.nvim
+  use {
+    "folke/todo-comments.nvim",
+    requires = {
+      {"nvim-lua/plenary.nvim"},
+    }
+  }
+
 
   -- indent-blankline: displays indent guides using invisible characters.
   -- https://github.com/lukas-reineke/indent-blankline.nvim
