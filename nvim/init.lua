@@ -22,6 +22,8 @@ vim.opt.cursorline = true                         -- Highlight the current line
 vim.opt.relativenumber = true                     -- Show line numbers relative to current line.
 vim.opt.scrolloff = 10                            -- Show N lines of context around the cursor.
 
+vim.opt.laststatus = 3
+
 -- Colorscheme
 vim.opt.termguicolors = true
 vim.cmd[[colorscheme dracula]]
