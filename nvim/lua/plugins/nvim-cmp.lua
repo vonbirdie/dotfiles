@@ -19,6 +19,10 @@ cmp.setup {
       vim.fn["vsnip#anonymous"](args.body)
     end,
   },
+  window = {
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
+  },
   formatting = {
     format = function(entry, vim_item)
       vim_item.menu = ({
