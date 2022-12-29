@@ -14,10 +14,13 @@ require('formatter').setup {
   }
 }
 
-vim.api.nvim_exec([[
-augroup FormatAutogroup
-  autocmd!
-  autocmd BufWritePost *.rs FormatWrite
-augroup END
-]], true)
+local format_auto_group = vim.api.nvim_create_augroup("FormatAutogroup", {
+  clear = false,
+})
 
+vim.api.nvim_create_autocmd("BufWritePost", {
+  group = format_auto_group,
+  pattern = {"*.rs"},
+  command = "FormatWrite",
+  desc = "Format *.rs files on save.",
+})
