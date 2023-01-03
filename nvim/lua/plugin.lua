@@ -74,6 +74,15 @@ return require('packer').startup(function(use)
     }
   }
 
+  -- https://github.com/j-hui/fidget.nvim
+  use {
+    'j-hui/fidget.nvim',
+
+    config = function()
+      require("fidget").setup{}
+    end
+  }
+
 
   -- indent-blankline: displays indent guides using invisible characters.
   -- https://github.com/lukas-reineke/indent-blankline.nvim
