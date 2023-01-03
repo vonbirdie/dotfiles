@@ -26,6 +26,9 @@ require('lspconfig').sumneko_lua.setup {
       workspace = {
         -- Make the server aware of Neovim runtime files
         library = vim.api.nvim_get_runtime_file("", true),
+        -- Do not attempt to detect other libraries to provide diagnostics for.
+        -- https://github.com/sumneko/lua-language-server/wiki/Libraries
+        checkThirdParty = false,
       },
       -- Do not send telemetry data containing a randomized but unique identifier
       telemetry = {
