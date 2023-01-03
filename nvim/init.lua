@@ -42,8 +42,8 @@ vim.opt.completeopt = "menu,menuone,preview,noselect"
 -- Search & Replace
 --
 -- Give VIM some sane regex matching
-vim.api.nvim_set_keymap("n", "/", "/\\v", { noremap = true })
-vim.api.nvim_set_keymap("v", "/", "/\\v", { noremap = true })
+vim.keymap.set("n", "/", "/\\v")
+vim.keymap.set("v", "/", "/\\v")
 
 vim.opt.ignorecase = true                         -- Case-insensitive searching.
 vim.opt.smartcase = true                          -- But case-sensitive if expression contains a capital letter.
@@ -56,26 +56,26 @@ vim.opt.showmatch = true
 --
 vim.g.mapleader = ","                             -- Set the leader key to ,
 
-vim.api.nvim_set_keymap("", "<leader>tt", ":tabnew<cr>", { noremap = true })
-vim.api.nvim_set_keymap("", "<leader>tc", ":tabclose<cr>", { noremap = true })
-vim.api.nvim_set_keymap("", "<leader>tn", ":tabnext<cr>", { noremap = true })
-vim.api.nvim_set_keymap("", "<leader>tp", ":tabprevious<cr>", { noremap = true })
+vim.keymap.set("", "<leader>tt", ":tabnew<cr>")
+vim.keymap.set("", "<leader>tc", ":tabclose<cr>")
+vim.keymap.set("", "<leader>tn", ":tabnext<cr>")
+vim.keymap.set("", "<leader>tp", ":tabprevious<cr>")
 
-vim.api.nvim_set_keymap("", "<leader>n", ":bn<cr>", { noremap = true })
-vim.api.nvim_set_keymap("", "<leader>bd", ":bd<cr>", { noremap = true })
+vim.keymap.set("", "<leader>n", ":bn<cr>")
+vim.keymap.set("", "<leader>bd", ":bd<cr>")
 
-vim.api.nvim_set_keymap("", "<C-m>", ":w<CR>:make<CR>:cw<CR>", { noremap = true })
+vim.keymap.set("", "<C-m>", ":w<CR>:make<CR>:cw<CR>")
 
-vim.api.nvim_set_keymap("n", "<leader><space>", ":noh<cr>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<tab>", "%", { noremap = true })
-vim.api.nvim_set_keymap("v", "<tab>", "%", { noremap = true })
+vim.keymap.set("n", "<leader><space>", ":noh<cr>")
+vim.keymap.set("n", "<tab>", "%")
+vim.keymap.set("v", "<tab>", "%")
 
-vim.api.nvim_set_keymap("n", "<up>", "", { noremap = true })
-vim.api.nvim_set_keymap("n", "<down>", "", { noremap = true })
-vim.api.nvim_set_keymap("n", "<left>", "", { noremap = true })
-vim.api.nvim_set_keymap("n", "<right>", "", { noremap = true })
-vim.api.nvim_set_keymap("n", "j", "gj", { noremap = true })
-vim.api.nvim_set_keymap("n", "k", "gk", { noremap = true })
+vim.keymap.set("n", "<up>", "")
+vim.keymap.set("n", "<down>", "")
+vim.keymap.set("n", "<left>", "")
+vim.keymap.set("n", "<right>", "")
+vim.keymap.set("n", "j", "gj")
+vim.keymap.set("n", "k", "gk")
 
 
 --
