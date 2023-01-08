@@ -4,6 +4,7 @@ local cmp = require 'cmp'
 cmp.setup {
   sources = {
     { name = 'calc' },
+    { name = 'nvim_lsp_signature_help' },
     { name = 'nvim_lsp' },
     { name = 'nvim_lua' },
     { name = 'path' },
@@ -22,6 +23,7 @@ cmp.setup {
     format = function(entry, vim_item)
       vim_item.menu = ({
         calc = "[Calc]",
+        nvim_lsp_signature_help = "[Signature]",
         nvim_lsp = "[LSP]",
         nvim_lua = "[NeovimLua]",
         path = "[Path]",
