@@ -23,11 +23,11 @@ return require('packer').startup(function(use)
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-nvim-lsp-signature-help'
 
-  -- vim-vsnip: VSCode(LSP)'s snippet feature in vim and integration with
-  -- nvim-cmp.
-  -- https://github.com/hrsh7th/vim-vsnip
-  use 'hrsh7th/vim-vsnip'
-  use 'hrsh7th/cmp-vsnip'
+  -- LuaSnip: Snippet Engine for Neovim written in Lua and integration with nvmp-cmp.
+  -- https://github.com/L3MON4D3/LuaSnip
+  use 'L3MON4D3/LuaSnip'
+  use 'saadparwaiz1/cmp_luasnip'
+  use 'rafamadriz/friendly-snippets'
 
   -- telescope: fuzzy file finder and integration with neovim.
   -- https://github.com/nvim-telescope/telescope.nvim
@@ -54,7 +54,6 @@ return require('packer').startup(function(use)
   use 'neovim/nvim-lspconfig'
   use 'romgrk/nvim-treesitter-context'
   use 'kosayoda/nvim-lightbulb'
-  use 'rafamadriz/friendly-snippets'
   use 'theHamsta/nvim-dap-virtual-text'
 
   use {
