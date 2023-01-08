@@ -48,6 +48,23 @@ return require('packer').startup(function(use)
   -- https://github.com/mfussenegger/nvim-dap
   use 'mfussenegger/nvim-dap'
 
+  -- https://github.com/folke/todo-comments.nvim
+  use {
+    "folke/todo-comments.nvim",
+    requires = {
+      {"nvim-lua/plenary.nvim"},
+    }
+  }
+
+  -- https://github.com/j-hui/fidget.nvim
+  use {
+    'j-hui/fidget.nvim',
+
+    config = function()
+      require("fidget").setup{}
+    end
+  }
+
   --
   -- Evaluate
   --
@@ -64,23 +81,6 @@ return require('packer').startup(function(use)
       {'nvim-lua/popup.nvim'},
       {'nvim-lua/plenary.nvim'},
     }
-  }
-
-  -- https://github.com/folke/todo-comments.nvim
-  use {
-    "folke/todo-comments.nvim",
-    requires = {
-      {"nvim-lua/plenary.nvim"},
-    }
-  }
-
-  -- https://github.com/j-hui/fidget.nvim
-  use {
-    'j-hui/fidget.nvim',
-
-    config = function()
-      require("fidget").setup{}
-    end
   }
 
   use {
