@@ -1,26 +1,3 @@
-
-vim.g.mapleader = ","                             -- Set the leader key to ,
-
-
---
--- Plugins
---
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
-end
-vim.opt.rtp:prepend(lazypath)
-
-require('lazy').setup('plugins')
-
-
 --
 -- DISPLAY
 --
@@ -32,7 +9,6 @@ vim.opt.laststatus = 3
 
 -- Colorscheme
 vim.opt.termguicolors = true
-vim.cmd[[colorscheme dracula]]
 
 
 --
@@ -69,6 +45,8 @@ vim.opt.showmatch = true
 --
 -- Mappings
 --
+vim.g.mapleader = ","                             -- Set the leader key to ,
+
 vim.keymap.set("", "<leader>tt", ":tabnew<cr>")
 vim.keymap.set("", "<leader>tc", ":tabclose<cr>")
 vim.keymap.set("", "<leader>tn", ":tabnext<cr>")
@@ -89,6 +67,25 @@ vim.keymap.set("n", "<left>", "")
 vim.keymap.set("n", "<right>", "")
 vim.keymap.set("n", "j", "gj")
 vim.keymap.set("n", "k", "gk")
+
+
+--
+-- Plugins
+--
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
+require('lazy').setup('plugins')
 
 
 --
