@@ -5,6 +5,10 @@
 return {
   'mhartington/formatter.nvim',
 
+  event = {
+    "BufWritePost",
+  },
+
   config = function()
     require('formatter').setup {
       filetype = {

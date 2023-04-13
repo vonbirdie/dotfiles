@@ -4,56 +4,57 @@
 
 return {
   'nvim-telescope/telescope.nvim',
+
   dependencies = {
     {'nvim-lua/plenary.nvim'},
     {'kyazdani42/nvim-web-devicons', lazy = true},
     {'nvim-treesitter/nvim-treesitter', lazy = true},
   },
 
-  config = function()
-    vim.keymap.set("", "<c-o>", function()
+  keys = {
+    {"<c-o>", function()
       return require('telescope.builtin').resume()
-    end, { desc = "Resume the last search." })
+    end, {"n", "v", "o"}, { desc = "Resume the last search." }},
 
-    vim.keymap.set("", "<c-h>", function()
+    {"<c-h>", function()
       return require('telescope.builtin').help_tags()
-    end, { desc = "Search the nvim documentation." })
-    vim.keymap.set("", "<c-k>", function()
+    end, {"n", "v", "o"}, { desc = "Search the nvim documentation." }},
+    {"<c-k>", function()
       return require('telescope.builtin').keymaps()
-    end, { desc = "Search among defined keymaps." })
+    end, {"n", "v", "o"}, { desc = "Search among defined keymaps." }},
 
-    vim.keymap.set("", "<space>ff", function()
+    {"<space>ff", function()
       return require('telescope.builtin').find_files()
-    end)
-    vim.keymap.set("", "<space>fg", function()
+    end, {"n", "v", "o"}},
+    {"<space>fg", function()
       return require('telescope.builtin').live_grep()
-    end)
-    vim.keymap.set("", "<space>fb", function()
+    end, {"n", "v", "o"}},
+    {"<space>fb", function()
       return require('telescope.builtin').buffers()
-    end)
-    vim.keymap.set("", "<space>fm", function()
+    end, {"n", "v", "o"}},
+    {"<space>fm", function()
       return require('telescope.builtin').marks()
-    end)
+    end, {"n", "v", "o"}},
 
-    vim.keymap.set("", "gD", function()
+    {"gD", function()
       return require('telescope.builtin').lsp_type_definitions()
-    end)
-    vim.keymap.set("", "gd", function()
+    end, {"n", "v", "o"}},
+    {"gd", function()
       return require('telescope.builtin').lsp_definitions()
-    end)
-    vim.keymap.set("", "gi", function()
+    end, {"n", "v", "o"}},
+    {"gi", function()
       return require('telescope.builtin').lsp_implementations()
-    end)
-    vim.keymap.set("", "gr", function()
+    end, {"n", "v", "o"}},
+    {"gr", function()
       return require('telescope.builtin').lsp_references()
-    end)
+    end, {"n", "v", "o"}},
 
-    vim.keymap.set("", "<space>ca", function()
+    {"<space>ca", function()
       return require('telescope.builtin').lsp_code_actions()
-    end)
-    vim.keymap.set("", "<space>cd", function()
+    end, {"n", "v", "o"}},
+    {"<space>cd", function()
       return require('telescope.builtin').diagnostics()
-    end)
-  end
+    end, {"n", "v", "o"}},
+  },
 }
 
