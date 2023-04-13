@@ -8,7 +8,7 @@ table.insert(runtime_path, "lua/?/init.lua")
 -- nvim-cmp almost supports LSP's capabilities so advertise it to LSP servers.
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-require('lspconfig').sumneko_lua.setup {
+require('lspconfig').lua_ls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
   settings = {
