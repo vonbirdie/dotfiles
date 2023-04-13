@@ -2,40 +2,47 @@
 --
 
 return {
-    "folke/todo-comments.nvim",
+  "folke/todo-comments.nvim",
 
-    dependencies = {
-      {"nvim-lua/plenary.nvim"},
-    },
+  dependencies = {
+    {"nvim-lua/plenary.nvim"},
+  },
 
-    config = function()
-      require("todo-comments").setup({
-        keywords = {
-          TODO = {
-            color = "warning",
-            icon = "",
-          },
-          DO_NOT_SUBMIT = {
-            color = "error",
-            icon = "",
-            alt = { "DO NOT SUBMIT" },
-          },
+  keys = {
+    {"]t", function()
+      require("todo-comments").jump_next()
+    end, "n", { desc = "Next todo comment" }},
+
+    {"[t", function()
+      require("todo-comments").jump_prev()
+    end, "n", { desc = "Previous todo comment" }},
+  },
+
+  event = {
+    "BufEnter",
+  },
+
+  config = function()
+    require("todo-comments").setup({
+      keywords = {
+        TODO = {
+          color = "warning",
+          icon = "",
         },
-
-        highlight = {
-          before = "fg",
-          keyword = "bg",
-          after = "fg",
-          pattern = [[<(KEYWORDS)\s*\((b\/[0-9]+|[a-z]+)\):]],
+        DO_NOT_SUBMIT = {
+          color = "error",
+          icon = "",
+          alt = { "DO NOT SUBMIT" },
         },
-      })
+      },
 
-      vim.keymap.set("n", "]t", function()
-        require("todo-comments").jump_next()
-      end, { desc = "Next todo comment" })
-
-      vim.keymap.set("n", "[t", function()
-        require("todo-comments").jump_prev()
-      end, { desc = "Previous todo comment" })
-    end
+      highlight = {
+        before = "fg",
+        keyword = "bg",
+        after = "fg",
+        pattern = [[<(KEYWORDS)\s*\((b\/[0-9]+|[a-z]+)\):]],
+      },
+    })
+  end
 }
+
