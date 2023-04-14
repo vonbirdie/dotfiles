@@ -43,7 +43,9 @@ return {
     -- nvim-cmp almost supports LSP's capabilities so advertise it to LSP servers.
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-    require('lspconfig').lua_ls.setup {
+    local lspconfig = require('lspconfig')
+
+    lspconfig.lua_ls.setup {
       on_attach = on_attach,
       capabilities = capabilities,
       settings = {
@@ -61,6 +63,20 @@ return {
           },
           IntelliSense = {
             traceBeSetted = true,
+          },
+        },
+      },
+    }
+    lspconfig.yamlls.setup {
+      settings = {
+        yaml = {
+          schemas = {
+            ["https://raw.githubusercontent.com/instrumenta/kubernetes-json-schema/master/v1.18.1-standalone-strict/all.json"] = "/*.k8s.yaml",
+          },
+        },
+        redhat = {
+          telemetry = {
+            enabled = false
           },
         },
       },
