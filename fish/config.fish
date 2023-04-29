@@ -23,7 +23,7 @@ set -gx DIFFPROG "nvim -d"
 # ----------------------------------------------------------------------
 
 # we always pass these to ls(1)
-set -gx LS_COMMON "lhBG"
+set -gx LS_COMMON "lhB"
 
 # -------------------------------------------------------------------
 # USER SHELL ENVIRONMENT
