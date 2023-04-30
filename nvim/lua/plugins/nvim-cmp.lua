@@ -46,6 +46,7 @@ return {
         documentation = cmp.config.window.bordered(),
       },
       formatting = {
+        fields = { "kind", "abbr", "menu" },
         format = function(entry, vim_item)
           vim_item.menu = ({
             calc = "[Calc]",
