@@ -11,14 +11,14 @@ return {
     {'nvim-lua/plenary.nvim'},
   },
 
-  config = function()
-    require("cheatsheet").setup({
-      bundled_cheatsheets = {
-        disabled = {
-          "nerd-fonts",
-        },
+  opts = {
+    bundled_cheatsheets = {
+      disabled = {
+        "nerd-fonts",
+        "unicode",
+        "markdown",
       },
-    })
-  end
+    },
+  }
 }
 

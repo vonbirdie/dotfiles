@@ -6,12 +6,12 @@ return {
   'mfussenegger/nvim-dap',
 
   dependencies = {
-    'theHamsta/nvim-dap-virtual-text',
+    {'theHamsta/nvim-dap-virtual-text', opts = {}},
   },
 
   config = function()
-
     local dap = require('dap')
+
     dap.adapters.lldb = {
       type = 'executable',
       command = '/usr/bin/lldb-vscode',
@@ -31,11 +31,6 @@ return {
         args = {},
       },
     }
-
-    require("nvim-dap-virtual-text").setup {
-    }
   end
 }
-
-
 
