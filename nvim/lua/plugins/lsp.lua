@@ -1,4 +1,3 @@
-
 return {
   'neovim/nvim-lspconfig',
 
@@ -6,7 +5,7 @@ return {
     -- Displays a fidget spinner indicating LSP progress.
     -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
     -- https://github.com/j-hui/fidget.nvim
-    {'j-hui/fidget.nvim', opts = {}},
+    { 'j-hui/fidget.nvim', opts = {} },
 
     -- Neovim setup for init.lua with full signature help, docs and completion for the nvim lua API.
     -- https://github.com/folke/neodev.nvim
@@ -17,28 +16,35 @@ return {
     -- Use an on_attach function to only map the following keys
     -- after the language server attaches to the current buffer
     on_attach = function(client, bufnr)
-
-      -- Mappings.
-      local opts = { buffer = true, silent = true }
-
       -- See `:help vim.lsp.*` for documentation on any of the below functions
-      vim.keymap.set('n', 'K', function() vim.lsp.buf.hover() end, opts)
-      vim.keymap.set('n', '<space>wa', function() vim.lsp.buf.add_workspace_folder() end, opts)
-      vim.keymap.set('n', '<space>wr', function() vim.lsp.buf.remove_workspace_folder() end, opts)
-      vim.keymap.set('n', '<space>wl', function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, opts)
-      vim.keymap.set('n', '<space>rn', function() vim.lsp.buf.rename() end, opts)
-      vim.keymap.set('n', '<space>e', function() vim.diagnostic.open_float() end, opts)
-      vim.keymap.set('n', '<space>q', function() vim.diagnostic.setloclist() end, opts)
-      vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format({ async = true }) end, opts)
+      vim.keymap.set('n', 'K', function()
+        vim.lsp.buf.hover()
+      end, { buffer = true, silent = true })
+      vim.keymap.set('n', '<space>wa', function()
+        vim.lsp.buf.add_workspace_folder()
+      end, { desc = "Add workspace folder", buffer = true, silent = true })
+      vim.keymap.set('n', '<space>wr', function()
+        vim.lsp.buf.remove_workspace_folder()
+      end, { desc = "Remove workspace folder", buffer = true, silent = true })
+      vim.keymap.set('n', '<space>wl', function()
+        print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+      end, { desc = "List workspace folders", buffer = true, silent = true })
+      vim.keymap.set('n', '<space>rn', function()
+        vim.lsp.buf.rename()
+      end, { desc = "Rename symbol and all references", buffer = true, silent = true })
+      vim.keymap.set('n', '<space>e', function()
+        vim.diagnostic.open_float()
+      end, { buffer = true, silent = true })
+      vim.keymap.set('n', '<space>q', function()
+        vim.diagnostic.setloclist()
+      end, { buffer = true, silent = true })
+      vim.keymap.set("n", "]d", function()
+        vim.diagnostic.goto_next()
+      end, { desc = "Next diagnostic", buffer = true, silent = true })
+      vim.keymap.set("n", "[d", function()
+        vim.diagnostic.goto_prev()
+      end, { desc = "Previous diagnostic", buffer = true, silent = true })
     end
-
-    vim.keymap.set("n", "]d", function()
-      vim.diagnostic.goto_next()
-    end, { desc = "Next diagnostic" })
-
-    vim.keymap.set("n", "[d", function()
-      vim.diagnostic.goto_prev()
-    end, { desc = "Previous diagnostic" })
 
     -- nvim-cmp almost supports LSP's capabilities so advertise it to LSP servers.
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -81,7 +87,5 @@ return {
         },
       },
     }
-
   end
 }
-
