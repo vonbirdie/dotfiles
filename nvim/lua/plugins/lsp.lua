@@ -15,7 +15,7 @@ return {
   config = function()
     -- Use an on_attach function to only map the following keys
     -- after the language server attaches to the current buffer
-    on_attach = function(client, bufnr)
+    local on_attach = function(client, bufnr)
       -- See `:help vim.lsp.*` for documentation on any of the below functions
       vim.keymap.set('n', 'K', function()
         vim.lsp.buf.hover()
@@ -44,6 +44,24 @@ return {
       vim.keymap.set("n", "[d", function()
         vim.diagnostic.goto_prev()
       end, { desc = "Previous diagnostic", buffer = true, silent = true })
+
+      local lsp_auto_group = vim.api.nvim_create_augroup("LspAutogroup", {
+        clear = false,
+      })
+      if client.resolved_capabilities.document_highlight then
+        vim.api.nvim_create_autocmd({"CursorHold", "CursorHoldI"}, {
+          group = lsp_auto_group,
+          callback = function()
+            vim.lsp.buf.document_highlight()
+          end
+        })
+        vim.api.nvim_create_autocmd({"CursorMoved"}, {
+          group = lsp_auto_group,
+          callback = function()
+            vim.lsp.util.buf_clear_references(bufnr)
+          end
+        })
+      end
     end
 
     -- nvim-cmp almost supports LSP's capabilities so advertise it to LSP servers.

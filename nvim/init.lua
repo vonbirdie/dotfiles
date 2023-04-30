@@ -7,6 +7,8 @@ vim.opt.scrolloff = 10                            -- Show N lines of context aro
 
 vim.opt.laststatus = 3
 
+vim.opt.updatetime = 250                          -- Write swap and trigger CursorHold event after this many ms.
+
 -- Colorscheme
 vim.opt.termguicolors = true
 
