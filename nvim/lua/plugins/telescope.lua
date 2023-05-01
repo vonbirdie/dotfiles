@@ -7,8 +7,8 @@ return {
 
   dependencies = {
     {'nvim-lua/plenary.nvim'},
-    {'kyazdani42/nvim-web-devicons', lazy = true},
-    {'nvim-treesitter/nvim-treesitter', lazy = true},
+    {'kyazdani42/nvim-web-devicons'},
+    {'nvim-treesitter/nvim-treesitter'},
   },
 
   keys = {

@@ -11,6 +11,8 @@ return {
     {'theHamsta/nvim-dap-virtual-text', opts = {}},
   },
 
+  lazy = false,
+
   config = function()
     local dap = require('dap')
 

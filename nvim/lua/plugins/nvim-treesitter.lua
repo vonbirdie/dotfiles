@@ -11,6 +11,8 @@ return {
 
   build = ':TSUpdate' ,
 
+  lazy = false,
+
   opts = {
     -- One of "all", "maintained" (parsers with maintainers), or a list of languages
     ensure_installed = {

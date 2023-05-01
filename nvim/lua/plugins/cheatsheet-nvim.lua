@@ -11,6 +11,8 @@ return {
     {'nvim-lua/plenary.nvim'},
   },
 
+  lazy = false,
+
   opts = {
     bundled_cheatsheets = {
       disabled = {

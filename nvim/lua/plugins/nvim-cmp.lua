@@ -23,6 +23,8 @@ return {
     },
   },
 
+  lazy = false,
+
   config = function()
     local luasnip = require("luasnip")
     local cmp = require('cmp')
