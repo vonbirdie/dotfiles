@@ -12,7 +12,7 @@ return {
     'folke/neodev.nvim',
   },
 
-  config = function()
+  init = function()
     -- Use an on_attach function to only map the following keys
     -- after the language server attaches to the current buffer
     local on_attach = function(client, bufnr)
