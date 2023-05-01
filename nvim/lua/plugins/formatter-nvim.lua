@@ -9,22 +9,7 @@ return {
     "BufWritePost",
   },
 
-  config = function()
-    require('formatter').setup {
-      filetype = {
-        rust = {
-          -- Rustfmt
-          function()
-            return {
-              exe = "rustfmt",
-              args = {"--emit=stdout"},
-              stdin = true
-            }
-          end
-        },
-      }
-    }
-
+  init = function()
     local format_auto_group = vim.api.nvim_create_augroup("FormatAutogroup", {
       clear = false,
     })
@@ -35,5 +20,21 @@ return {
       command = "FormatWrite",
       desc = "Format *.rs files on save.",
     })
-  end
+  end,
+
+  opts = {
+    filetype = {
+      rust = {
+        -- Rustfmt
+        function()
+          return {
+            exe = "rustfmt",
+            args = {"--emit=stdout"},
+            stdin = true
+          }
+        end
+      },
+    }
+  },
 }
+
