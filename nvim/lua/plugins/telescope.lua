@@ -38,16 +38,6 @@ return {
     {"<space>fm", function()
       return require('telescope.builtin').marks()
     end, {"n", "v", "o"}},
-
-    {"gD", function()
-      return require('telescope.builtin').lsp_type_definitions()
-    end, {"n", "v", "o"}},
-    {"gd", function()
-      return require('telescope.builtin').lsp_definitions()
-    end, {"n", "v", "o"}},
-    {"gi", function()
-      return require('telescope.builtin').lsp_implementations()
-    end, {"n", "v", "o"}},
   },
 
   opts = function()

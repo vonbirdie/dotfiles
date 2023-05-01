@@ -25,9 +25,18 @@ return {
       return require('trouble').toggle('quickfix')
     end, {desc = "Toggle trouble quickfix window."}},
 
+    {"gD", function ()
+      return require('trouble').toggle('lsp_type_definitions')
+    end, {desc = "Toggle trouble type definitions window."}},
+    {"gd", function ()
+      return require('trouble').toggle('lsp_definitions')
+    end, {desc = "Toggle trouble definitions window."}},
+    {"gi", function ()
+      return require('trouble').toggle('lsp_implementations')
+    end, {desc = "Toggle trouble implementations window."}},
     {"gr", function ()
       return require('trouble').toggle('lsp_references')
-    end, {desc = "Toggle trouble LSP references window."}},
+    end, {desc = "Toggle trouble references window."}},
   },
 
   opts = {
