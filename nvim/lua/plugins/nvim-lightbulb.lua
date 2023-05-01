@@ -1,8 +1,13 @@
+-- Renders an icon in the status column where there is a code action from an
+-- LSP available.
+-- https://github.com/kosayoda/nvim-lightbulb
 
 return {
   'kosayoda/nvim-lightbulb',
 
-  config = function()
+  lazy = true,
+
+  init = function()
     local lightbulb_auto_group = vim.api.nvim_create_augroup("LightbulbAutogroup", {
       clear = false,
     })
@@ -12,6 +17,6 @@ return {
         require('nvim-lightbulb').update_lightbulb()
       end
     })
-  end
+  end,
 }
 
