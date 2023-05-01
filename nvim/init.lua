@@ -4,6 +4,7 @@
 vim.opt.cursorline = true                         -- Highlight the current line
 vim.opt.relativenumber = true                     -- Show line numbers relative to current line.
 vim.opt.scrolloff = 10                            -- Show N lines of context around the cursor.
+vim.opt.signcolumn = 'auto:1-2'                   -- Always keep at least 1 sign column but allow max 2.
 
 vim.opt.laststatus = 3
 
