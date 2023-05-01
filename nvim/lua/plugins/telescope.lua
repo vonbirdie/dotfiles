@@ -9,8 +9,9 @@ return {
 
   dependencies = {
     {'nvim-lua/plenary.nvim'},
-    {'kyazdani42/nvim-web-devicons'},
+    {'nvim-tree/nvim-web-devicons'},
     {'nvim-treesitter/nvim-treesitter'},
+    {'folke/trouble.nvim'},
   },
 
   keys = {
@@ -47,16 +48,23 @@ return {
     {"gi", function()
       return require('telescope.builtin').lsp_implementations()
     end, {"n", "v", "o"}},
-    {"gr", function()
-      return require('telescope.builtin').lsp_references()
-    end, {"n", "v", "o"}},
 
     {"<space>ca", function()
       return require('telescope.builtin').lsp_code_actions()
     end, {"n", "v", "o"}},
-    {"<space>cd", function()
-      return require('telescope.builtin').diagnostics()
-    end, {"n", "v", "o"}},
   },
+
+  opts = function()
+    local trouble = require("trouble.providers.telescope")
+
+    return {
+      defaults = {
+        mappings = {
+          i = { ["<c-t>"] = trouble.open_with_trouble },
+          n = { ["<c-t>"] = trouble.open_with_trouble },
+        },
+      },
+    }
+  end,
 }
 
