@@ -48,10 +48,6 @@ return {
     {"gi", function()
       return require('telescope.builtin').lsp_implementations()
     end, {"n", "v", "o"}},
-
-    {"<space>ca", function()
-      return require('telescope.builtin').lsp_code_actions()
-    end, {"n", "v", "o"}},
   },
 
   opts = function()

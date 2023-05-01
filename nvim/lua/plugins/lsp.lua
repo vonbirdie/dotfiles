@@ -20,6 +20,7 @@ return {
       vim.keymap.set('n', 'K', function()
         vim.lsp.buf.hover()
       end, { buffer = true, silent = true })
+
       vim.keymap.set('n', '<space>wa', function()
         vim.lsp.buf.add_workspace_folder()
       end, { desc = "Add workspace folder", buffer = true, silent = true })
@@ -29,15 +30,21 @@ return {
       vim.keymap.set('n', '<space>wl', function()
         print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
       end, { desc = "List workspace folders", buffer = true, silent = true })
+
+      vim.keymap.set('n', '<space>ca', function()
+        vim.lsp.buf.code_action()
+      end, { desc = "Apply a code action.", buffer = true, silent = true })
       vim.keymap.set('n', '<space>rn', function()
         vim.lsp.buf.rename()
       end, { desc = "Rename symbol and all references", buffer = true, silent = true })
+
       vim.keymap.set('n', '<space>e', function()
         vim.diagnostic.open_float()
       end, { buffer = true, silent = true })
       vim.keymap.set('n', '<space>q', function()
         vim.diagnostic.setloclist()
       end, { buffer = true, silent = true })
+
       vim.keymap.set("n", "]d", function()
         vim.diagnostic.goto_next()
       end, { desc = "Next diagnostic", buffer = true, silent = true })
