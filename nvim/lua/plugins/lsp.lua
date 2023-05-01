@@ -41,10 +41,6 @@ return {
       vim.keymap.set('n', '<space>e', function()
         vim.diagnostic.open_float()
       end, { buffer = true, silent = true })
-      vim.keymap.set('n', '<space>q', function()
-        vim.diagnostic.setloclist()
-      end, { buffer = true, silent = true })
-
       vim.keymap.set("n", "]d", function()
         vim.diagnostic.goto_next()
       end, { desc = "Next diagnostic", buffer = true, silent = true })

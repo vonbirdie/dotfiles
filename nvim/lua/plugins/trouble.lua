@@ -18,13 +18,6 @@ return {
       return require('trouble').toggle('document_diagnostics')
     end, {desc = "Toggle trouble document diagnostics window."}},
 
-    {"<leader>xl", function ()
-      return require('trouble').toggle('loclist')
-    end, {desc = "Toggle trouble loclist window."}},
-    {"<leader>xq", function ()
-      return require('trouble').toggle('quickfix')
-    end, {desc = "Toggle trouble quickfix window."}},
-
     {"gD", function ()
       return require('trouble').toggle('lsp_type_definitions')
     end, {desc = "Toggle trouble type definitions window."}},

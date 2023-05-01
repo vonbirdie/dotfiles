@@ -35,9 +35,6 @@ return {
     {"<space>fb", function()
       return require('telescope.builtin').buffers()
     end, {"n", "v", "o"}},
-    {"<space>fm", function()
-      return require('telescope.builtin').marks()
-    end, {"n", "v", "o"}},
   },
 
   opts = function()
