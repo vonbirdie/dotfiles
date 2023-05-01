@@ -12,6 +12,7 @@ return {
     'hrsh7th/cmp-nvim-lua',
     'hrsh7th/cmp-path',
     'hrsh7th/cmp-nvim-lsp-signature-help',
+    {'windwp/nvim-autopairs', opts = {}},
 
     {
       'L3MON4D3/LuaSnip',
@@ -26,6 +27,9 @@ return {
   config = function()
     local luasnip = require("luasnip")
     local cmp = require('cmp')
+
+    local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+    cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
 
     local has_words_before = function()
       local line, col = unpack(vim.api.nvim_win_get_cursor(0))
