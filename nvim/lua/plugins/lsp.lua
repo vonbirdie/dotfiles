@@ -36,33 +36,33 @@ return {
         -- See `:help vim.lsp.*` for documentation on any of the below functions
         vim.keymap.set('n', 'K', function()
           vim.lsp.buf.hover()
-        end, { buffer = true, silent = true })
+        end, { buffer = true })
 
         vim.keymap.set('n', '<space>wa', function()
           vim.lsp.buf.add_workspace_folder()
-        end, { desc = "Add workspace folder", buffer = true, silent = true })
+        end, { desc = "Add workspace folder", buffer = true})
         vim.keymap.set('n', '<space>wr', function()
           vim.lsp.buf.remove_workspace_folder()
-        end, { desc = "Remove workspace folder", buffer = true, silent = true })
+        end, { desc = "Remove workspace folder", buffer = true})
         vim.keymap.set('n', '<space>wl', function()
           print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-        end, { desc = "List workspace folders", buffer = true, silent = true })
+        end, { desc = "List workspace folders", buffer = true})
 
         vim.keymap.set('n', '<space>ca', function()
           vim.lsp.buf.code_action()
-        end, { desc = "Apply a code action.", buffer = true, silent = true })
+        end, { desc = "Apply a code action.", buffer = true})
         vim.keymap.set('n', '<space>rn', function()
           vim.lsp.buf.rename()
-        end, { desc = "Rename symbol and all references", buffer = true, silent = true })
+        end, { desc = "Rename symbol and all references", buffer = true})
 
         -- Check for diagnosticProvider?
         -- https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/#textDocument_pullDiagnostics
         vim.keymap.set("n", "]d", function()
           vim.diagnostic.goto_next()
-        end, { desc = "Next diagnostic", buffer = true, silent = true })
+        end, { desc = "Next diagnostic", buffer = true})
         vim.keymap.set("n", "[d", function()
           vim.diagnostic.goto_prev()
-        end, { desc = "Previous diagnostic", buffer = true, silent = true })
+        end, { desc = "Previous diagnostic", buffer = true})
         vim.api.nvim_create_autocmd({"CursorHold"}, {
           group = user_lsp_config_augroup,
           callback = function()
