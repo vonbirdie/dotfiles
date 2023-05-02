@@ -13,59 +13,74 @@ return {
   },
 
   init = function()
-    -- Use an on_attach function to only map the following keys
-    -- after the language server attaches to the current buffer
-    local on_attach = function(client, bufnr)
-      -- See `:help vim.lsp.*` for documentation on any of the below functions
-      vim.keymap.set('n', 'K', function()
-        vim.lsp.buf.hover()
-      end, { buffer = true, silent = true })
+    local user_lsp_config_augroup = vim.api.nvim_create_augroup('UserLspConfig', {})
 
-      vim.keymap.set('n', '<space>wa', function()
-        vim.lsp.buf.add_workspace_folder()
-      end, { desc = "Add workspace folder", buffer = true, silent = true })
-      vim.keymap.set('n', '<space>wr', function()
-        vim.lsp.buf.remove_workspace_folder()
-      end, { desc = "Remove workspace folder", buffer = true, silent = true })
-      vim.keymap.set('n', '<space>wl', function()
-        print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-      end, { desc = "List workspace folders", buffer = true, silent = true })
+    -- Configure certain things only once an LSP has been attached to a buffer
+    -- and configure those things only for that buffer. This makes sure that
+    -- keymaps are not configured in buffers with an LSP that does not support
+    -- that functionality.
+    --
+    -- To see what capabilities an LSP that is attached to the current buffer
+    -- has you can run the following command:
+    --
+    -- ```
+    -- :lua =vim.lsp.get_active_clients()[1].server_capabilities
+    -- ```
+    vim.api.nvim_create_autocmd('LspAttach', {
+      group = user_lsp_config_augroup,
 
-      vim.keymap.set('n', '<space>ca', function()
-        vim.lsp.buf.code_action()
-      end, { desc = "Apply a code action.", buffer = true, silent = true })
-      vim.keymap.set('n', '<space>rn', function()
-        vim.lsp.buf.rename()
-      end, { desc = "Rename symbol and all references", buffer = true, silent = true })
+      callback = function(ev)
+        local bufnr = ev.buf
+        local client = vim.lsp.get_client_by_id(ev.data.client_id)
 
-      vim.keymap.set('n', '<space>e', function()
-        vim.diagnostic.open_float()
-      end, { buffer = true, silent = true })
-      vim.keymap.set("n", "]d", function()
-        vim.diagnostic.goto_next()
-      end, { desc = "Next diagnostic", buffer = true, silent = true })
-      vim.keymap.set("n", "[d", function()
-        vim.diagnostic.goto_prev()
-      end, { desc = "Previous diagnostic", buffer = true, silent = true })
+        -- See `:help vim.lsp.*` for documentation on any of the below functions
+        vim.keymap.set('n', 'K', function()
+          vim.lsp.buf.hover()
+        end, { buffer = true, silent = true })
 
-      local lsp_auto_group = vim.api.nvim_create_augroup("LspAutogroup", {
-        clear = false,
-      })
-      if client.resolved_capabilities.document_highlight then
-        vim.api.nvim_create_autocmd({"CursorHold", "CursorHoldI"}, {
-          group = lsp_auto_group,
-          callback = function()
-            vim.lsp.buf.document_highlight()
-          end
-        })
-        vim.api.nvim_create_autocmd({"CursorMoved"}, {
-          group = lsp_auto_group,
-          callback = function()
-            vim.lsp.util.buf_clear_references(bufnr)
-          end
-        })
+        vim.keymap.set('n', '<space>wa', function()
+          vim.lsp.buf.add_workspace_folder()
+        end, { desc = "Add workspace folder", buffer = true, silent = true })
+        vim.keymap.set('n', '<space>wr', function()
+          vim.lsp.buf.remove_workspace_folder()
+        end, { desc = "Remove workspace folder", buffer = true, silent = true })
+        vim.keymap.set('n', '<space>wl', function()
+          print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+        end, { desc = "List workspace folders", buffer = true, silent = true })
+
+        vim.keymap.set('n', '<space>ca', function()
+          vim.lsp.buf.code_action()
+        end, { desc = "Apply a code action.", buffer = true, silent = true })
+        vim.keymap.set('n', '<space>rn', function()
+          vim.lsp.buf.rename()
+        end, { desc = "Rename symbol and all references", buffer = true, silent = true })
+
+        vim.keymap.set('n', '<space>e', function()
+          vim.diagnostic.open_float()
+        end, { buffer = true, silent = true })
+        vim.keymap.set("n", "]d", function()
+          vim.diagnostic.goto_next()
+        end, { desc = "Next diagnostic", buffer = true, silent = true })
+        vim.keymap.set("n", "[d", function()
+          vim.diagnostic.goto_prev()
+        end, { desc = "Previous diagnostic", buffer = true, silent = true })
+
+        if client.server_capabilities.documentHighlightProvider then
+          vim.api.nvim_create_autocmd({"CursorHold", "CursorHoldI"}, {
+            group = user_lsp_config_augroup,
+            callback = function()
+              vim.lsp.buf.document_highlight()
+            end
+          })
+          vim.api.nvim_create_autocmd({"CursorMoved"}, {
+            group = user_lsp_config_augroup,
+            callback = function()
+              vim.lsp.util.buf_clear_references(bufnr)
+            end
+          })
+        end
       end
-    end
+    })
 
     -- nvim-cmp almost supports LSP's capabilities so advertise it to LSP servers.
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -73,7 +88,6 @@ return {
     local lspconfig = require('lspconfig')
 
     lspconfig.lua_ls.setup {
-      on_attach = on_attach,
       capabilities = capabilities,
       settings = {
         Lua = {
