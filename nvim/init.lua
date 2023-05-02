@@ -73,6 +73,28 @@ vim.keymap.set("n", "k", "gk")
 
 
 --
+-- Diagnostics
+--
+vim.diagnostic.config({
+  severity_sort = true,
+  float = {
+    focusable = false,
+    close_events = { "BufLeave", "CursorMoved", "InsertEnter" },
+    border = 'rounded',
+    source = 'always',
+    prefix = ' ',
+    scope = 'cursor',
+  }
+})
+
+local signs = { Error = " ", Warn = "", Hint = "", Info = "" }
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
+
+
+--
 -- Plugins
 --
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"

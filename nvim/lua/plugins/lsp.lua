@@ -55,15 +55,20 @@ return {
           vim.lsp.buf.rename()
         end, { desc = "Rename symbol and all references", buffer = true, silent = true })
 
-        vim.keymap.set('n', '<space>e', function()
-          vim.diagnostic.open_float()
-        end, { buffer = true, silent = true })
+        -- Check for diagnosticProvider?
+        -- https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/#textDocument_pullDiagnostics
         vim.keymap.set("n", "]d", function()
           vim.diagnostic.goto_next()
         end, { desc = "Next diagnostic", buffer = true, silent = true })
         vim.keymap.set("n", "[d", function()
           vim.diagnostic.goto_prev()
         end, { desc = "Previous diagnostic", buffer = true, silent = true })
+        vim.api.nvim_create_autocmd({"CursorHold"}, {
+          group = user_lsp_config_augroup,
+          callback = function()
+            vim.diagnostic.open_float()
+          end
+        })
 
         if client.server_capabilities.documentHighlightProvider then
           vim.api.nvim_create_autocmd({"CursorHold", "CursorHoldI"}, {
