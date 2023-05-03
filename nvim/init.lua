@@ -112,10 +112,26 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup('plugins', {
   defaults = {
+    -- Load everything lazily by default. Anything not compliant should opt out
+    -- by setting `lazy = false` in their spec.
     lazy = true,
   },
   install = {
     colorscheme = { "dracula" }
+  },
+  performance = {
+    rtp = {
+      -- Never use these bundled plugins so disable them to save a few
+      -- milliseconds.
+      disabled_plugins = {
+        "gzip",
+        "netrwPlugin",
+        "tarPlugin",
+        "tohtml",
+        "tutor",
+        "zipPlugin",
+      },
+    },
   },
 })
 
