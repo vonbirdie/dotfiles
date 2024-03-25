@@ -5,7 +5,7 @@ return {
     -- Displays a fidget spinner indicating LSP progress.
     -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
     -- https://github.com/j-hui/fidget.nvim
-    { 'j-hui/fidget.nvim', branch = 'legacy', opts = {} },
+    { 'j-hui/fidget.nvim', opts = {} },
 
     -- Neovim setup for init.lua with full signature help, docs and completion for the nvim lua API.
     -- https://github.com/folke/neodev.nvim
