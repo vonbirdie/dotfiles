@@ -28,13 +28,13 @@ return {
 
     {"<leader>ff", function()
       return require('telescope.builtin').find_files()
-    end, {"n", "v", "o"}},
+    end, {"n", "v", "o"}, { desc = "Search among files." }},
     {"<leader>fg", function()
       return require('telescope.builtin').live_grep()
-    end, {"n", "v", "o"}},
+    end, {"n", "v", "o"}, { desc = "Search the contents in files." }},
     {"<leader>fb", function()
       return require('telescope.builtin').buffers()
-    end, {"n", "v", "o"}},
+    end, {"n", "v", "o"}, { desc = "Search among open buffers." }},
   },
 
   opts = function()
