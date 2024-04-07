@@ -26,13 +26,13 @@ return {
       return require('telescope.builtin').keymaps()
     end, {"n", "v", "o"}, { desc = "Search among defined keymaps." }},
 
-    {"<space>ff", function()
+    {"<leader>ff", function()
       return require('telescope.builtin').find_files()
     end, {"n", "v", "o"}},
-    {"<space>fg", function()
+    {"<leader>fg", function()
       return require('telescope.builtin').live_grep()
     end, {"n", "v", "o"}},
-    {"<space>fb", function()
+    {"<leader>fb", function()
       return require('telescope.builtin').buffers()
     end, {"n", "v", "o"}},
   },
