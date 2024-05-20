@@ -23,8 +23,6 @@ vim.opt.expandtab = true                          -- Use spaces instead of tabs
 
 vim.opt.backspace = {"indent", "eol", "start"}    -- Intuitive backspacing.
 
-vim.opt.pastetoggle = "<F2>"
-
 
 --
 -- OTHER
