@@ -7,16 +7,9 @@ return {
   },
 
   keys = {
-    {"<leader>xx", function ()
-      return require('trouble').toggle()
-    end, {desc = "Toggle trouble window."}},
-
-    {"<leader>xw", function ()
-      return require('trouble').toggle('workspace_diagnostics')
-    end, {desc = "Toggle trouble workspace diagnostics window."}},
     {"<leader>xd", function ()
-      return require('trouble').toggle('document_diagnostics')
-    end, {desc = "Toggle trouble document diagnostics window."}},
+      return require('trouble').toggle('diagnostics')
+    end, {desc = "Toggle trouble diagnostics window."}},
 
     {"gD", function ()
       return require('trouble').toggle('lsp_type_definitions')
